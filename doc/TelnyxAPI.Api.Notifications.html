@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.28.3">
+    <meta name="project" content="telnyx_api v2.0.0">
+
+    <title>TelnyxAPI.Api.Notifications — telnyx_api v2.0.0</title>
+    <link rel="stylesheet" href="dist/elixir-d5ff82e6b0f5651c0ac0.css" />
+
+    <script src="dist/sidebar_items-f49dba0c51.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-a088a6cc33ae3464193e.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+
+<section class="sidebar">
+  <button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+    <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+  </button>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <p class="sr-only">Search</p>
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+    <div class="sidebar-projectDetails">
+      <a href="Telnyx Elixir API.html" class="sidebar-projectName" translate="no">
+telnyx_api
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v2.0.0
+      </strong>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+  <span translate="no">TelnyxAPI.Api.Notifications</span> 
+  <small class="app-vsn" translate="no">(telnyx_api v2.0.0)</small>
+
+</h1>
+
+
+  <section id="moduledoc">
+<p>API calls for all endpoints tagged <code class="inline">Notifications</code>.</p>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#create_notification_channels/2" translate="no">create_notification_channels(connection, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Create a notification channel
+Create a notification channel.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#create_notification_profile/2" translate="no">create_notification_profile(connection, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Create a notification profile
+Create a notification profile.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#create_notification_setting/2" translate="no">create_notification_setting(connection, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Add a Notification Setting
+Add a notification setting.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#delete_notification_channel/3" translate="no">delete_notification_channel(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Delete a notification channel
+Delete a notification channel.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#delete_notification_profile/3" translate="no">delete_notification_profile(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Delete a notification profile
+Delete a notification profile.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#delete_notification_setting/3" translate="no">delete_notification_setting(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Delete a notification setting
+Delete a notification setting.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#find_notifications_events/2" translate="no">find_notifications_events(connection, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>List all Notifications Events
+Returns a list of your notifications events.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#find_notifications_events_conditions/2" translate="no">find_notifications_events_conditions(connection, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>List all Notifications Events Conditions
+Returns a list of your notifications events conditions.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#find_notifications_profiles/2" translate="no">find_notifications_profiles(connection, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>List all Notifications Profiles
+Returns a list of your notifications profiles.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#list_notification_channels/2" translate="no">list_notification_channels(connection, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>List notification channels
+List notification channels.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#list_notification_settings/2" translate="no">list_notification_settings(connection, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>List notification settings
+List notification settings.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#retrieve_notification_channel/3" translate="no">retrieve_notification_channel(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Retrieve a notification channel
+Retrieve a notification channel.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#retrieve_notification_profile/3" translate="no">retrieve_notification_profile(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Retrieve a notification profile
+Retrieve a notification profile.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#retrieve_notification_setting/3" translate="no">retrieve_notification_setting(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Retrieve a notification setting
+Retrieve a notification setting.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#update_notification_channel/4" translate="no">update_notification_channel(connection, id, notification_channel, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Update a notification channel
+Update a notification channel.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#update_notification_profile/4" translate="no">update_notification_profile(connection, id, notification_profile, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Update a notification profile
+Update a notification profile.</p></div>
+
+      </div>
+
+  </div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="create_notification_channels/2">
+
+    <span id="create_notification_channels/1"></span>
+
+  <div class="detail-header">
+    <a href="#create_notification_channels/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create_notification_channels(connection, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_notification_channels(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.CreateNotificationChannel.html#t:t/0">TelnyxAPI.Model.CreateNotificationChannel.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Create a notification channel
+Create a notification channel.</p><h2 id="create_notification_channels/2-parameters" class="section-heading">
+  <a href="#create_notification_channels/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:body (NotificationChannel): Add a Notification Channel</li></ul></li></ul><h2 id="create_notification_channels/2-returns" class="section-heading">
+  <a href="#create_notification_channels/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="create_notification_profile/2">
+
+    <span id="create_notification_profile/1"></span>
+
+  <div class="detail-header">
+    <a href="#create_notification_profile/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create_notification_profile(connection, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_notification_profile(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.CreateNotificationProfile.html#t:t/0">TelnyxAPI.Model.CreateNotificationProfile.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Create a notification profile
+Create a notification profile.</p><h2 id="create_notification_profile/2-parameters" class="section-heading">
+  <a href="#create_notification_profile/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:body (NotificationProfile): Add a Notification Profile</li></ul></li></ul><h2 id="create_notification_profile/2-returns" class="section-heading">
+  <a href="#create_notification_profile/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="create_notification_setting/2">
+
+    <span id="create_notification_setting/1"></span>
+
+  <div class="detail-header">
+    <a href="#create_notification_setting/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create_notification_setting(connection, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_notification_setting(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.CreateNotificationSettingAsync.html#t:t/0">TelnyxAPI.Model.CreateNotificationSettingAsync.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CreateNotificationSetting.html#t:t/0">TelnyxAPI.Model.CreateNotificationSetting.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Add a Notification Setting
+Add a notification setting.</p><h2 id="create_notification_setting/2-parameters" class="section-heading">
+  <a href="#create_notification_setting/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:body (NotificationSetting): </li></ul></li></ul><h2 id="create_notification_setting/2-returns" class="section-heading">
+  <a href="#create_notification_setting/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="delete_notification_channel/3">
+
+    <span id="delete_notification_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_notification_channel/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">delete_notification_channel(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> delete_notification_channel(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.DeleteNotificationChannel.html#t:t/0">TelnyxAPI.Model.DeleteNotificationChannel.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Delete a notification channel
+Delete a notification channel.</p><h2 id="delete_notification_channel/3-parameters" class="section-heading">
+  <a href="#delete_notification_channel/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="delete_notification_channel/3-returns" class="section-heading">
+  <a href="#delete_notification_channel/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="delete_notification_profile/3">
+
+    <span id="delete_notification_profile/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_notification_profile/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">delete_notification_profile(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> delete_notification_profile(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.DeleteNotificationProfiles.html#t:t/0">TelnyxAPI.Model.DeleteNotificationProfiles.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Delete a notification profile
+Delete a notification profile.</p><h2 id="delete_notification_profile/3-parameters" class="section-heading">
+  <a href="#delete_notification_profile/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="delete_notification_profile/3-returns" class="section-heading">
+  <a href="#delete_notification_profile/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="delete_notification_setting/3">
+
+    <span id="delete_notification_setting/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_notification_setting/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">delete_notification_setting(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> delete_notification_setting(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.DeleteNotificationSetting.html#t:t/0">TelnyxAPI.Model.DeleteNotificationSetting.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.DeleteNotificationSettingAsync.html#t:t/0">TelnyxAPI.Model.DeleteNotificationSettingAsync.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Delete a notification setting
+Delete a notification setting.</p><h2 id="delete_notification_setting/3-parameters" class="section-heading">
+  <a href="#delete_notification_setting/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="delete_notification_setting/3-returns" class="section-heading">
+  <a href="#delete_notification_setting/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="find_notifications_events/2">
+
+    <span id="find_notifications_events/1"></span>
+
+  <div class="detail-header">
+    <a href="#find_notifications_events/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">find_notifications_events(connection, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> find_notifications_events(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.ListNotificationEvents.html#t:t/0">TelnyxAPI.Model.ListNotificationEvents.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>List all Notifications Events
+Returns a list of your notifications events.</p><h2 id="find_notifications_events/2-parameters" class="section-heading">
+  <a href="#find_notifications_events/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:page_left_square_bracketnumber_right_square_bracket (integer()): The page number to load</li><li>:page_left_square_bracketsize_right_square_bracket (integer()): The size of the page</li></ul></li></ul><h2 id="find_notifications_events/2-returns" class="section-heading">
+  <a href="#find_notifications_events/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="find_notifications_events_conditions/2">
+
+    <span id="find_notifications_events_conditions/1"></span>
+
+  <div class="detail-header">
+    <a href="#find_notifications_events_conditions/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">find_notifications_events_conditions(connection, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> find_notifications_events_conditions(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.ListNotificationEvenConditions.html#t:t/0">TelnyxAPI.Model.ListNotificationEvenConditions.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>List all Notifications Events Conditions
+Returns a list of your notifications events conditions.</p><h2 id="find_notifications_events_conditions/2-parameters" class="section-heading">
+  <a href="#find_notifications_events_conditions/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:page_left_square_bracketnumber_right_square_bracket (integer()): The page number to load</li><li>:page_left_square_bracketsize_right_square_bracket (integer()): The size of the page</li><li>:filter_left_square_bracketassociated_record_type_right_square_bracket_left_square_bracketeq_right_square_bracket (String.t): Filter by the associated record type</li></ul></li></ul><h2 id="find_notifications_events_conditions/2-returns" class="section-heading">
+  <a href="#find_notifications_events_conditions/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="find_notifications_profiles/2">
+
+    <span id="find_notifications_profiles/1"></span>
+
+  <div class="detail-header">
+    <a href="#find_notifications_profiles/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">find_notifications_profiles(connection, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> find_notifications_profiles(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.ListNotificationProfiles.html#t:t/0">TelnyxAPI.Model.ListNotificationProfiles.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>List all Notifications Profiles
+Returns a list of your notifications profiles.</p><h2 id="find_notifications_profiles/2-parameters" class="section-heading">
+  <a href="#find_notifications_profiles/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:page_left_square_bracketnumber_right_square_bracket (integer()): The page number to load</li><li>:page_left_square_bracketsize_right_square_bracket (integer()): The size of the page</li></ul></li></ul><h2 id="find_notifications_profiles/2-returns" class="section-heading">
+  <a href="#find_notifications_profiles/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="list_notification_channels/2">
+
+    <span id="list_notification_channels/1"></span>
+
+  <div class="detail-header">
+    <a href="#list_notification_channels/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list_notification_channels(connection, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list_notification_channels(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.ListNotificationChannels.html#t:t/0">TelnyxAPI.Model.ListNotificationChannels.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>List notification channels
+List notification channels.</p><h2 id="list_notification_channels/2-parameters" class="section-heading">
+  <a href="#list_notification_channels/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:page_left_square_bracketnumber_right_square_bracket (integer()): The page number to load</li><li>:page_left_square_bracketsize_right_square_bracket (integer()): The size of the page</li><li>:filter_left_square_bracketchannel_type_id_right_square_bracket_left_square_bracketeq_right_square_bracket (String.t): Filter by the id of a channel type</li></ul></li></ul><h2 id="list_notification_channels/2-returns" class="section-heading">
+  <a href="#list_notification_channels/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="list_notification_settings/2">
+
+    <span id="list_notification_settings/1"></span>
+
+  <div class="detail-header">
+    <a href="#list_notification_settings/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list_notification_settings(connection, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list_notification_settings(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.ListNotificationSettings.html#t:t/0">TelnyxAPI.Model.ListNotificationSettings.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>List notification settings
+List notification settings.</p><h2 id="list_notification_settings/2-parameters" class="section-heading">
+  <a href="#list_notification_settings/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:page_left_square_bracketnumber_right_square_bracket (integer()): The page number to load</li><li>:page_left_square_bracketsize_right_square_bracket (integer()): The size of the page</li><li>:filter_left_square_bracketnotification_profile_id_right_square_bracket_left_square_bracketeq_right_square_bracket (String.t): Filter by the id of a notification profile</li><li>:filter_left_square_bracketnotification_channel_right_square_bracket_left_square_bracketeq_right_square_bracket (String.t): Filter by the id of a notification channel</li><li>:filter_left_square_bracketnotification_event_condition_id_right_square_bracket_left_square_bracketeq_right_square_bracket (String.t): Filter by the id of a notification channel</li><li>:filter_left_square_bracketassociated_record_type_right_square_bracket_left_square_bracketeq_right_square_bracket (String.t): Filter by the associated record type</li><li>:filter_left_square_bracketstatus_right_square_bracket_left_square_bracketeq_right_square_bracket (String.t): The status of a notification setting</li></ul></li></ul><h2 id="list_notification_settings/2-returns" class="section-heading">
+  <a href="#list_notification_settings/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="retrieve_notification_channel/3">
+
+    <span id="retrieve_notification_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#retrieve_notification_channel/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">retrieve_notification_channel(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> retrieve_notification_channel(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.RetrieveNotificationChannel.html#t:t/0">TelnyxAPI.Model.RetrieveNotificationChannel.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Retrieve a notification channel
+Retrieve a notification channel.</p><h2 id="retrieve_notification_channel/3-parameters" class="section-heading">
+  <a href="#retrieve_notification_channel/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="retrieve_notification_channel/3-returns" class="section-heading">
+  <a href="#retrieve_notification_channel/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="retrieve_notification_profile/3">
+
+    <span id="retrieve_notification_profile/2"></span>
+
+  <div class="detail-header">
+    <a href="#retrieve_notification_profile/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">retrieve_notification_profile(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> retrieve_notification_profile(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.RetrieveNotificationProfile.html#t:t/0">TelnyxAPI.Model.RetrieveNotificationProfile.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Retrieve a notification profile
+Retrieve a notification profile.</p><h2 id="retrieve_notification_profile/3-parameters" class="section-heading">
+  <a href="#retrieve_notification_profile/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="retrieve_notification_profile/3-returns" class="section-heading">
+  <a href="#retrieve_notification_profile/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="retrieve_notification_setting/3">
+
+    <span id="retrieve_notification_setting/2"></span>
+
+  <div class="detail-header">
+    <a href="#retrieve_notification_setting/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">retrieve_notification_setting(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> retrieve_notification_setting(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.RetrieveNotificationSetting.html#t:t/0">TelnyxAPI.Model.RetrieveNotificationSetting.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Retrieve a notification setting
+Retrieve a notification setting.</p><h2 id="retrieve_notification_setting/3-parameters" class="section-heading">
+  <a href="#retrieve_notification_setting/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="retrieve_notification_setting/3-returns" class="section-heading">
+  <a href="#retrieve_notification_setting/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="update_notification_channel/4">
+
+    <span id="update_notification_channel/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_notification_channel/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">update_notification_channel(connection, id, notification_channel, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> update_notification_channel(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.NotificationChannel.html#t:t/0">TelnyxAPI.Model.NotificationChannel.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.UpdateNotificationChannel.html#t:t/0">TelnyxAPI.Model.UpdateNotificationChannel.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Update a notification channel
+Update a notification channel.</p><h2 id="update_notification_channel/4-parameters" class="section-heading">
+  <a href="#update_notification_channel/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>notification_channel (NotificationChannel): Update notification channel object</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="update_notification_channel/4-returns" class="section-heading">
+  <a href="#update_notification_channel/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="update_notification_profile/4">
+
+    <span id="update_notification_profile/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_notification_profile/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">update_notification_profile(connection, id, notification_profile, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> update_notification_profile(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.NotificationProfile.html#t:t/0">TelnyxAPI.Model.NotificationProfile.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.UpdateNotificationProfile.html#t:t/0">TelnyxAPI.Model.UpdateNotificationProfile.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Update a notification profile
+Update a notification profile.</p><h2 id="update_notification_profile/4-parameters" class="section-heading">
+  <a href="#update_notification_profile/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>notification_profile (NotificationProfile): Update notification profile object</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="update_notification_profile/4-returns" class="section-heading">
+  <a href="#update_notification_profile/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+
+          <p>
+            On Hex.pm:
+
+            <span class="line">
+              <a href="https://hex.pm/packages/telnyx_api/2.0.0" class="line footer-hex-package">Package</a>
+              <a href="https://preview.hex.pm/preview/telnyx_api/2.0.0" class="line">Preview</a>
+
+                <a href="https://preview.hex.pm/preview/telnyx_api/2.0.0/show/lib/telnyx_api/api/notifications.ex">(current file)</a>
+
+            </span>
+
+            <button class="line footer-button display-quick-switch">
+              Search
+            </button>
+          </p>
+
+        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.3) for the
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

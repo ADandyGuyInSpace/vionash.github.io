@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.28.3">
+    <meta name="project" content="telnyx_api v2.0.0">
+
+    <title>TelnyxAPI.Api.ChannelZones — telnyx_api v2.0.0</title>
+    <link rel="stylesheet" href="dist/elixir-d5ff82e6b0f5651c0ac0.css" />
+
+    <script src="dist/sidebar_items-f49dba0c51.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-a088a6cc33ae3464193e.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+
+<section class="sidebar">
+  <button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+    <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+  </button>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <p class="sr-only">Search</p>
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+    <div class="sidebar-projectDetails">
+      <a href="Telnyx Elixir API.html" class="sidebar-projectName" translate="no">
+telnyx_api
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v2.0.0
+      </strong>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+  <span translate="no">TelnyxAPI.Api.ChannelZones</span> 
+  <small class="app-vsn" translate="no">(telnyx_api v2.0.0)</small>
+
+</h1>
+
+
+  <section id="moduledoc">
+<p>API calls for all endpoints tagged <code class="inline">ChannelZones</code>.</p>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#assign_phone_number/4" translate="no">assign_phone_number(connection, channel_zone_id, body, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Assign a phone number to a channel zone
+You should own the phone number being assigned to the channel zone. Remember that you should reserve channels in this channel zone, otherwise you won't be able to receive incoming calls.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#get_channel_zone/3" translate="no">get_channel_zone(connection, channel_zone_id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Get a specific channel zone
+Get a specific channel zone</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#get_channel_zones/2" translate="no">get_channel_zones(connection, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Get list of channel zones
+List of channel zones with their countries</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#get_phone_numbers/3" translate="no">get_phone_numbers(connection, channel_zone_id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Get the list of phone numbers assigned to a channel zone
+Retrieve the assigned phone numbers in a channel zone. Phone numbers assigned to a channel zone can receive concurrent calls up to the quantity reserved in that channel zone. Additional concurrent calls are rejected with a busy signal.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#patch_group/4" translate="no">patch_group(connection, channel_zone_id, body, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Patch a channel zone
+Change the amount of reserved channels at a given channel zone</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#unassign_phone_number/4" translate="no">unassign_phone_number(connection, channel_zone_id, phone_number, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Unassign a phone number from a channel zone</p></div>
+
+      </div>
+
+  </div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="assign_phone_number/4">
+
+    <span id="assign_phone_number/3"></span>
+
+  <div class="detail-header">
+    <a href="#assign_phone_number/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">assign_phone_number(connection, channel_zone_id, body, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> assign_phone_number(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.ListChannelZonesByPhoneNumber.html#t:t/0">TelnyxAPI.Model.ListChannelZonesByPhoneNumber.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.GcbPhoneNumber.html#t:t/0">TelnyxAPI.Model.GcbPhoneNumber.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Assign a phone number to a channel zone
+You should own the phone number being assigned to the channel zone. Remember that you should reserve channels in this channel zone, otherwise you won't be able to receive incoming calls.</p><h2 id="assign_phone_number/4-parameters" class="section-heading">
+  <a href="#assign_phone_number/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>channel_zone_id (String.t): Channel zone identifier</li><li>body (ListChannelZonesByPhoneNumber): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="assign_phone_number/4-returns" class="section-heading">
+  <a href="#assign_phone_number/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="get_channel_zone/3">
+
+    <span id="get_channel_zone/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_channel_zone/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_channel_zone(connection, channel_zone_id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> get_channel_zone(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.GcbChannelZone.html#t:t/0">TelnyxAPI.Model.GcbChannelZone.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Get a specific channel zone
+Get a specific channel zone</p><h2 id="get_channel_zone/3-parameters" class="section-heading">
+  <a href="#get_channel_zone/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>channel_zone_id (String.t): Channel zone identifier</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="get_channel_zone/3-returns" class="section-heading">
+  <a href="#get_channel_zone/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="get_channel_zones/2">
+
+    <span id="get_channel_zones/1"></span>
+
+  <div class="detail-header">
+    <a href="#get_channel_zones/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_channel_zones(connection, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> get_channel_zones(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.GetGcbChannelZonesRequestResponse.html#t:t/0">TelnyxAPI.Model.GetGcbChannelZonesRequestResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Get list of channel zones
+List of channel zones with their countries</p><h2 id="get_channel_zones/2-parameters" class="section-heading">
+  <a href="#get_channel_zones/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:page_left_square_bracketnumber_right_square_bracket (integer()): The page number to load</li><li>:page_left_square_bracketsize_right_square_bracket (integer()): The size of the page</li></ul></li></ul><h2 id="get_channel_zones/2-returns" class="section-heading">
+  <a href="#get_channel_zones/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="get_phone_numbers/3">
+
+    <span id="get_phone_numbers/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_phone_numbers/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_phone_numbers(connection, channel_zone_id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> get_phone_numbers(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.GetGcbPhoneNumbersRequestResponse.html#t:t/0">TelnyxAPI.Model.GetGcbPhoneNumbersRequestResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Get the list of phone numbers assigned to a channel zone
+Retrieve the assigned phone numbers in a channel zone. Phone numbers assigned to a channel zone can receive concurrent calls up to the quantity reserved in that channel zone. Additional concurrent calls are rejected with a busy signal.</p><h2 id="get_phone_numbers/3-parameters" class="section-heading">
+  <a href="#get_phone_numbers/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>channel_zone_id (String.t): Channel zone identifier</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:page_left_square_bracketnumber_right_square_bracket (integer()): The page number to load</li><li>:page_left_square_bracketsize_right_square_bracket (integer()): The size of the page</li></ul></li></ul><h2 id="get_phone_numbers/3-returns" class="section-heading">
+  <a href="#get_phone_numbers/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="patch_group/4">
+
+    <span id="patch_group/3"></span>
+
+  <div class="detail-header">
+    <a href="#patch_group/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">patch_group(connection, channel_zone_id, body, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> patch_group(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.UpdateChannelZone.html#t:t/0">TelnyxAPI.Model.UpdateChannelZone.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.GcbChannelZone.html#t:t/0">TelnyxAPI.Model.GcbChannelZone.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Patch a channel zone
+Change the amount of reserved channels at a given channel zone</p><h2 id="patch_group/4-parameters" class="section-heading">
+  <a href="#patch_group/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>channel_zone_id (String.t): Channel zone identifier</li><li>body (UpdateChannelZone): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="patch_group/4-returns" class="section-heading">
+  <a href="#patch_group/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="unassign_phone_number/4">
+
+    <span id="unassign_phone_number/3"></span>
+
+  <div class="detail-header">
+    <a href="#unassign_phone_number/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">unassign_phone_number(connection, channel_zone_id, phone_number, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> unassign_phone_number(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, nil} | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()} | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Unassign a phone number from a channel zone</p><h2 id="unassign_phone_number/4-parameters" class="section-heading">
+  <a href="#unassign_phone_number/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>channel_zone_id (String.t): Channel zone identifier</li><li>phone_number (String.t): The phone number to be looked up</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="unassign_phone_number/4-returns" class="section-heading">
+  <a href="#unassign_phone_number/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+
+          <p>
+            On Hex.pm:
+
+            <span class="line">
+              <a href="https://hex.pm/packages/telnyx_api/2.0.0" class="line footer-hex-package">Package</a>
+              <a href="https://preview.hex.pm/preview/telnyx_api/2.0.0" class="line">Preview</a>
+
+                <a href="https://preview.hex.pm/preview/telnyx_api/2.0.0/show/lib/telnyx_api/api/channel_zones.ex">(current file)</a>
+
+            </span>
+
+            <button class="line footer-button display-quick-switch">
+              Search
+            </button>
+          </p>
+
+        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.3) for the
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

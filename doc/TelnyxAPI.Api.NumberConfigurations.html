@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.28.3">
+    <meta name="project" content="telnyx_api v2.0.0">
+
+    <title>TelnyxAPI.Api.NumberConfigurations — telnyx_api v2.0.0</title>
+    <link rel="stylesheet" href="dist/elixir-d5ff82e6b0f5651c0ac0.css" />
+
+    <script src="dist/sidebar_items-f49dba0c51.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-a088a6cc33ae3464193e.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+
+<section class="sidebar">
+  <button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+    <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+  </button>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <p class="sr-only">Search</p>
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+    <div class="sidebar-projectDetails">
+      <a href="Telnyx Elixir API.html" class="sidebar-projectName" translate="no">
+telnyx_api
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v2.0.0
+      </strong>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+  <span translate="no">TelnyxAPI.Api.NumberConfigurations</span> 
+  <small class="app-vsn" translate="no">(telnyx_api v2.0.0)</small>
+
+</h1>
+
+
+  <section id="moduledoc">
+<p>API calls for all endpoints tagged <code class="inline">NumberConfigurations</code>.</p>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#delete_phone_number/3" translate="no">delete_phone_number(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Delete a phone number</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#enable_emergency_phone_number/4" translate="no">enable_emergency_phone_number(connection, id, phone_number_enable_emergency_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Enable emergency for a phone number</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#list_phone_numbers/2" translate="no">list_phone_numbers(connection, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>List phone numbers</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#list_phone_numbers_with_messaging_settings/2" translate="no">list_phone_numbers_with_messaging_settings(connection, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>List phone numbers with messaging settings</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#list_phone_numbers_with_voice_settings/2" translate="no">list_phone_numbers_with_voice_settings(connection, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>List phone numbers with voice settings</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#retrieve_phone_number/3" translate="no">retrieve_phone_number(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Retrieve a phone number</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#retrieve_phone_number_with_messaging_settings/3" translate="no">retrieve_phone_number_with_messaging_settings(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Retrieve a phone number with messaging settings</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#retrieve_phone_number_with_voice_settings/3" translate="no">retrieve_phone_number_with_voice_settings(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Retrieve a phone number with voice settings</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#update_phone_number/4" translate="no">update_phone_number(connection, id, update_phone_number_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Update a phone number</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#update_phone_number_with_messaging_settings/4" translate="no">update_phone_number_with_messaging_settings(connection, id, update_phone_number_messaging_settings_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Update a phone number with messaging settings</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#update_phone_number_with_voice_settings/4" translate="no">update_phone_number_with_voice_settings(connection, id, update_phone_number_voice_settings_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Update a phone number with voice settings</p></div>
+
+      </div>
+
+  </div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="delete_phone_number/3">
+
+    <span id="delete_phone_number/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_phone_number/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">delete_phone_number(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> delete_phone_number(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.PhoneNumberResponse1.html#t:t/0">TelnyxAPI.Model.PhoneNumberResponse1.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Delete a phone number</p><h2 id="delete_phone_number/3-parameters" class="section-heading">
+  <a href="#delete_phone_number/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="delete_phone_number/3-returns" class="section-heading">
+  <a href="#delete_phone_number/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="enable_emergency_phone_number/4">
+
+    <span id="enable_emergency_phone_number/3"></span>
+
+  <div class="detail-header">
+    <a href="#enable_emergency_phone_number/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">enable_emergency_phone_number(connection, id, phone_number_enable_emergency_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> enable_emergency_phone_number(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.PhoneNumberEnableEmergencyRequest.html#t:t/0">TelnyxAPI.Model.PhoneNumberEnableEmergencyRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.CreatePhoneNumberEmergencyRequested.html#t:t/0">TelnyxAPI.Model.CreatePhoneNumberEmergencyRequested.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CreatePhoneNumberEmergencyEnable.html#t:t/0">TelnyxAPI.Model.CreatePhoneNumberEmergencyEnable.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Enable emergency for a phone number</p><h2 id="enable_emergency_phone_number/4-parameters" class="section-heading">
+  <a href="#enable_emergency_phone_number/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>phone_number_enable_emergency_request (PhoneNumberEnableEmergencyRequest): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="enable_emergency_phone_number/4-returns" class="section-heading">
+  <a href="#enable_emergency_phone_number/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="list_phone_numbers/2">
+
+    <span id="list_phone_numbers/1"></span>
+
+  <div class="detail-header">
+    <a href="#list_phone_numbers/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list_phone_numbers(connection, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list_phone_numbers(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.ListPhoneNumbersResponse.html#t:t/0">TelnyxAPI.Model.ListPhoneNumbersResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>List phone numbers</p><h2 id="list_phone_numbers/2-parameters" class="section-heading">
+  <a href="#list_phone_numbers/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:page_left_square_bracketnumber_right_square_bracket (integer()): The page number to load</li><li>:page_left_square_bracketsize_right_square_bracket (integer()): The size of the page</li><li>:filter_left_square_brackettag_right_square_bracket (String.t): Filter by phone number tags.</li><li>:filter_left_square_bracketphone_number_right_square_bracket (String.t): Filter by phone number. Requires at least three digits.              Non-numerical characters will result in no values being returned.</li><li>:filter_left_square_bracketstatus_right_square_bracket (String.t): Filter by phone number status.</li><li>:filter_left_square_bracketconnection_id_right_square_bracket (String.t): Filter by connection_id.</li><li>:filter_left_square_bracketvoice_periodconnection_name_right_square_bracket_left_square_bracketcontains_right_square_bracket (String.t): Filter contains connection name. Requires at least three characters.</li><li>:filter_left_square_bracketvoice_periodconnection_name_right_square_bracket_left_square_bracketstarts_with_right_square_bracket (String.t): Filter starts with connection name. Requires at least three characters.</li><li>:filter_left_square_bracketvoice_periodconnection_name_right_square_bracket_left_square_bracketends_with_right_square_bracket (String.t): Filter ends with connection name. Requires at least three characters.</li><li>:filter_left_square_bracketvoice_periodconnection_name_right_square_bracket_left_square_bracketeq_right_square_bracket (String.t): Filter by connection name.</li><li>:filter_left_square_bracketusage_payment_method_right_square_bracket (String.t): Filter by usage_payment_method.</li><li>:filter_left_square_bracketbilling_group_id_right_square_bracket (String.t): Filter by the billing_group_id associated with phone numbers. To filter to only phone numbers that have no billing group associated them, set the value of this filter to the string 'null'.</li><li>:filter_left_square_bracketemergency_address_id_right_square_bracket (String.t): Filter by the emergency_address_id associated with phone numbers. To filter only phone numbers that have no emergency address associated with them, set the value of this filter to the string 'null'.</li><li>:filter_left_square_bracketcustomer_reference_right_square_bracket (String.t): Filter numbers via the customer_reference set.</li><li>:sort (String.t): Specifies the sort order for results. If not given, results are sorted by created_at in descending order.</li></ul></li></ul><h2 id="list_phone_numbers/2-returns" class="section-heading">
+  <a href="#list_phone_numbers/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="list_phone_numbers_with_messaging_settings/2">
+
+    <span id="list_phone_numbers_with_messaging_settings/1"></span>
+
+  <div class="detail-header">
+    <a href="#list_phone_numbers_with_messaging_settings/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list_phone_numbers_with_messaging_settings(connection, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list_phone_numbers_with_messaging_settings(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.ListMessagingSettingsResponse.html#t:t/0">TelnyxAPI.Model.ListMessagingSettingsResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>List phone numbers with messaging settings</p><h2 id="list_phone_numbers_with_messaging_settings/2-parameters" class="section-heading">
+  <a href="#list_phone_numbers_with_messaging_settings/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:page_left_square_bracketnumber_right_square_bracket (integer()): The page number to load</li><li>:page_left_square_bracketsize_right_square_bracket (integer()): The size of the page</li></ul></li></ul><h2 id="list_phone_numbers_with_messaging_settings/2-returns" class="section-heading">
+  <a href="#list_phone_numbers_with_messaging_settings/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="list_phone_numbers_with_voice_settings/2">
+
+    <span id="list_phone_numbers_with_voice_settings/1"></span>
+
+  <div class="detail-header">
+    <a href="#list_phone_numbers_with_voice_settings/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list_phone_numbers_with_voice_settings(connection, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list_phone_numbers_with_voice_settings(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.ListPhoneNumbersWithVoiceSettingsResponse.html#t:t/0">TelnyxAPI.Model.ListPhoneNumbersWithVoiceSettingsResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>List phone numbers with voice settings</p><h2 id="list_phone_numbers_with_voice_settings/2-parameters" class="section-heading">
+  <a href="#list_phone_numbers_with_voice_settings/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:page_left_square_bracketnumber_right_square_bracket (integer()): The page number to load</li><li>:page_left_square_bracketsize_right_square_bracket (integer()): The size of the page</li><li>:filter_left_square_bracketphone_number_right_square_bracket (String.t): Filter by phone number. Requires at least three digits.              Non-numerical characters will result in no values being returned.</li><li>:filter_left_square_bracketconnection_name_right_square_bracket_left_square_bracketcontains_right_square_bracket (String.t): Filter contains connection name. Requires at least three characters.</li><li>:filter_left_square_bracketcustomer_reference_right_square_bracket (String.t): Filter numbers via the customer_reference set.</li><li>:filter_left_square_bracketusage_payment_method_right_square_bracket (String.t): Filter by usage_payment_method.</li><li>:sort (String.t): Specifies the sort order for results. If not given, results are sorted by created_at in descending order.</li></ul></li></ul><h2 id="list_phone_numbers_with_voice_settings/2-returns" class="section-heading">
+  <a href="#list_phone_numbers_with_voice_settings/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="retrieve_phone_number/3">
+
+    <span id="retrieve_phone_number/2"></span>
+
+  <div class="detail-header">
+    <a href="#retrieve_phone_number/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">retrieve_phone_number(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> retrieve_phone_number(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.PhoneNumberResponse.html#t:t/0">TelnyxAPI.Model.PhoneNumberResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Retrieve a phone number</p><h2 id="retrieve_phone_number/3-parameters" class="section-heading">
+  <a href="#retrieve_phone_number/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="retrieve_phone_number/3-returns" class="section-heading">
+  <a href="#retrieve_phone_number/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="retrieve_phone_number_with_messaging_settings/3">
+
+    <span id="retrieve_phone_number_with_messaging_settings/2"></span>
+
+  <div class="detail-header">
+    <a href="#retrieve_phone_number_with_messaging_settings/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">retrieve_phone_number_with_messaging_settings(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> retrieve_phone_number_with_messaging_settings(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.RetrieveMessagingSettingsResponse.html#t:t/0">TelnyxAPI.Model.RetrieveMessagingSettingsResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Retrieve a phone number with messaging settings</p><h2 id="retrieve_phone_number_with_messaging_settings/3-parameters" class="section-heading">
+  <a href="#retrieve_phone_number_with_messaging_settings/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the type of resource.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="retrieve_phone_number_with_messaging_settings/3-returns" class="section-heading">
+  <a href="#retrieve_phone_number_with_messaging_settings/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="retrieve_phone_number_with_voice_settings/3">
+
+    <span id="retrieve_phone_number_with_voice_settings/2"></span>
+
+  <div class="detail-header">
+    <a href="#retrieve_phone_number_with_voice_settings/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">retrieve_phone_number_with_voice_settings(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> retrieve_phone_number_with_voice_settings(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.RetrievePhoneNumberVoiceResponse.html#t:t/0">TelnyxAPI.Model.RetrievePhoneNumberVoiceResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Retrieve a phone number with voice settings</p><h2 id="retrieve_phone_number_with_voice_settings/3-parameters" class="section-heading">
+  <a href="#retrieve_phone_number_with_voice_settings/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="retrieve_phone_number_with_voice_settings/3-returns" class="section-heading">
+  <a href="#retrieve_phone_number_with_voice_settings/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="update_phone_number/4">
+
+    <span id="update_phone_number/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_phone_number/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">update_phone_number(connection, id, update_phone_number_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> update_phone_number(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.UpdatePhoneNumberRequest.html#t:t/0">TelnyxAPI.Model.UpdatePhoneNumberRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.PhoneNumberResponse.html#t:t/0">TelnyxAPI.Model.PhoneNumberResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Update a phone number</p><h2 id="update_phone_number/4-parameters" class="section-heading">
+  <a href="#update_phone_number/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>update_phone_number_request (UpdatePhoneNumberRequest): Updated settings for the phone number.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="update_phone_number/4-returns" class="section-heading">
+  <a href="#update_phone_number/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="update_phone_number_with_messaging_settings/4">
+
+    <span id="update_phone_number_with_messaging_settings/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_phone_number_with_messaging_settings/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">update_phone_number_with_messaging_settings(connection, id, update_phone_number_messaging_settings_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> update_phone_number_with_messaging_settings(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.UpdatePhoneNumberMessagingSettingsRequest.html#t:t/0">TelnyxAPI.Model.UpdatePhoneNumberMessagingSettingsRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.RetrieveMessagingSettingsResponse.html#t:t/0">TelnyxAPI.Model.RetrieveMessagingSettingsResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Update a phone number with messaging settings</p><h2 id="update_phone_number_with_messaging_settings/4-parameters" class="section-heading">
+  <a href="#update_phone_number_with_messaging_settings/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the type of resource.</li><li>update_phone_number_messaging_settings_request (UpdatePhoneNumberMessagingSettingsRequest): Updated messaging settings for the phone number</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="update_phone_number_with_messaging_settings/4-returns" class="section-heading">
+  <a href="#update_phone_number_with_messaging_settings/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="update_phone_number_with_voice_settings/4">
+
+    <span id="update_phone_number_with_voice_settings/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_phone_number_with_voice_settings/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">update_phone_number_with_voice_settings(connection, id, update_phone_number_voice_settings_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> update_phone_number_with_voice_settings(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.UpdatePhoneNumberVoiceSettingsRequest.html#t:t/0">TelnyxAPI.Model.UpdatePhoneNumberVoiceSettingsRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.RetrievePhoneNumberVoiceResponse.html#t:t/0">TelnyxAPI.Model.RetrievePhoneNumberVoiceResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Update a phone number with voice settings</p><h2 id="update_phone_number_with_voice_settings/4-parameters" class="section-heading">
+  <a href="#update_phone_number_with_voice_settings/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>update_phone_number_voice_settings_request (UpdatePhoneNumberVoiceSettingsRequest): Updated voice settings for the phone number.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="update_phone_number_with_voice_settings/4-returns" class="section-heading">
+  <a href="#update_phone_number_with_voice_settings/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+
+          <p>
+            On Hex.pm:
+
+            <span class="line">
+              <a href="https://hex.pm/packages/telnyx_api/2.0.0" class="line footer-hex-package">Package</a>
+              <a href="https://preview.hex.pm/preview/telnyx_api/2.0.0" class="line">Preview</a>
+
+                <a href="https://preview.hex.pm/preview/telnyx_api/2.0.0/show/lib/telnyx_api/api/number_configurations.ex">(current file)</a>
+
+            </span>
+
+            <button class="line footer-button display-quick-switch">
+              Search
+            </button>
+          </p>
+
+        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.3) for the
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

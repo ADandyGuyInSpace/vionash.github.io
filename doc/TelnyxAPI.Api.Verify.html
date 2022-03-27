@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.28.3">
+    <meta name="project" content="telnyx_api v2.0.0">
+
+    <title>TelnyxAPI.Api.Verify — telnyx_api v2.0.0</title>
+    <link rel="stylesheet" href="dist/elixir-d5ff82e6b0f5651c0ac0.css" />
+
+    <script src="dist/sidebar_items-f49dba0c51.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-a088a6cc33ae3464193e.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+
+<section class="sidebar">
+  <button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+    <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+  </button>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <p class="sr-only">Search</p>
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+    <div class="sidebar-projectDetails">
+      <a href="Telnyx Elixir API.html" class="sidebar-projectName" translate="no">
+telnyx_api
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v2.0.0
+      </strong>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+  <span translate="no">TelnyxAPI.Api.Verify</span> 
+  <small class="app-vsn" translate="no">(telnyx_api v2.0.0)</small>
+
+</h1>
+
+
+  <section id="moduledoc">
+<p>API calls for all endpoints tagged <code class="inline">Verify</code>.</p>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#create_verification_call/3" translate="no">create_verification_call(connection, create_verification_request_call, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Trigger a Call verification</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#create_verification_flashcall/3" translate="no">create_verification_flashcall(connection, create_verification_request_flashcall, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Trigger a Flash call verification</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#create_verification_psd2/3" translate="no">create_verification_psd2(connection, create_verification_request_psd2, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Trigger a PSD2 verification</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#create_verification_sms/3" translate="no">create_verification_sms(connection, create_verification_request_sms, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Trigger a SMS verification</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#create_verification_whatsapp/3" translate="no">create_verification_whatsapp(connection, create_verification_request_whatsapp, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Trigger a Whatsapp verification</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#create_verify_profile/3" translate="no">create_verify_profile(connection, create_verify_profile_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Create a Verify profile
+Creates a new Verify profile to associate verifications with.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#delete_verify_profile/3" translate="no">delete_verify_profile(connection, verify_profile_id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Delete a Verify profile</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#list_verifications/3" translate="no">list_verifications(connection, phone_number, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>List verifications by phone number</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#list_verify_profiles/2" translate="no">list_verify_profiles(connection, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>List all Verify profiles
+Gets a paginated list of Verify profiles.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#retrieve_verification/3" translate="no">retrieve_verification(connection, verification_id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Retrieve a verification</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#retrieve_verify_profile/3" translate="no">retrieve_verify_profile(connection, verify_profile_id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Retrieve a Verify profile
+Gets a single Verify profile.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#update_verify_profile/4" translate="no">update_verify_profile(connection, verify_profile_id, update_verify_profile_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Update a Verify profile</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#verify_verification_code/4" translate="no">verify_verification_code(connection, phone_number, verify_verification_code_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Submit a verification code. Deprecation notice: `verify_profile_id' is now a mandatory field. The sunset date for this change is 2022-04-02 00:00:00.
+
+## Parameters
+
+- connection (TelnyxAPI.Connection): Connection to server
+- phone_number (String.t): The phone number associated with the verification code being verified.
+- verify_verification_code_request (VerifyVerificationCodeRequest): 
+- opts (KeywordList): [optional] Optional parameters
+## Returns
+
+{:ok, TelnyxAPI.Model.VerifyVerificationCodeResponse.t} on success
+{:error, Tesla.Env.t} on failure</p></div>
+
+      </div>
+
+  </div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="create_verification_call/3">
+
+    <span id="create_verification_call/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_verification_call/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create_verification_call(connection, create_verification_request_call, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_verification_call(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="TelnyxAPI.Model.CreateVerificationRequestCall.html#t:t/0">TelnyxAPI.Model.CreateVerificationRequestCall.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.CreateVerificationResponse.html#t:t/0">TelnyxAPI.Model.CreateVerificationResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Trigger a Call verification</p><h2 id="create_verification_call/3-parameters" class="section-heading">
+  <a href="#create_verification_call/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>create_verification_request_call (CreateVerificationRequestCall): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="create_verification_call/3-returns" class="section-heading">
+  <a href="#create_verification_call/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="create_verification_flashcall/3">
+
+    <span id="create_verification_flashcall/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_verification_flashcall/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create_verification_flashcall(connection, create_verification_request_flashcall, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_verification_flashcall(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="TelnyxAPI.Model.CreateVerificationRequestFlashcall.html#t:t/0">TelnyxAPI.Model.CreateVerificationRequestFlashcall.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.CreateVerificationResponse.html#t:t/0">TelnyxAPI.Model.CreateVerificationResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Trigger a Flash call verification</p><h2 id="create_verification_flashcall/3-parameters" class="section-heading">
+  <a href="#create_verification_flashcall/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>create_verification_request_flashcall (CreateVerificationRequestFlashcall): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="create_verification_flashcall/3-returns" class="section-heading">
+  <a href="#create_verification_flashcall/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="create_verification_psd2/3">
+
+    <span id="create_verification_psd2/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_verification_psd2/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create_verification_psd2(connection, create_verification_request_psd2, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_verification_psd2(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="TelnyxAPI.Model.CreateVerificationRequestPsd2.html#t:t/0">TelnyxAPI.Model.CreateVerificationRequestPsd2.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.CreateVerificationResponse.html#t:t/0">TelnyxAPI.Model.CreateVerificationResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Trigger a PSD2 verification</p><h2 id="create_verification_psd2/3-parameters" class="section-heading">
+  <a href="#create_verification_psd2/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>create_verification_request_psd2 (CreateVerificationRequestPsd2): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="create_verification_psd2/3-returns" class="section-heading">
+  <a href="#create_verification_psd2/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="create_verification_sms/3">
+
+    <span id="create_verification_sms/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_verification_sms/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create_verification_sms(connection, create_verification_request_sms, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_verification_sms(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="TelnyxAPI.Model.CreateVerificationRequestSms.html#t:t/0">TelnyxAPI.Model.CreateVerificationRequestSms.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.CreateVerificationResponse.html#t:t/0">TelnyxAPI.Model.CreateVerificationResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Trigger a SMS verification</p><h2 id="create_verification_sms/3-parameters" class="section-heading">
+  <a href="#create_verification_sms/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>create_verification_request_sms (CreateVerificationRequestSms): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="create_verification_sms/3-returns" class="section-heading">
+  <a href="#create_verification_sms/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="create_verification_whatsapp/3">
+
+    <span id="create_verification_whatsapp/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_verification_whatsapp/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create_verification_whatsapp(connection, create_verification_request_whatsapp, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_verification_whatsapp(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="TelnyxAPI.Model.CreateVerificationRequestWhatsapp.html#t:t/0">TelnyxAPI.Model.CreateVerificationRequestWhatsapp.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.CreateVerificationResponse.html#t:t/0">TelnyxAPI.Model.CreateVerificationResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Trigger a Whatsapp verification</p><h2 id="create_verification_whatsapp/3-parameters" class="section-heading">
+  <a href="#create_verification_whatsapp/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>create_verification_request_whatsapp (CreateVerificationRequestWhatsapp): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="create_verification_whatsapp/3-returns" class="section-heading">
+  <a href="#create_verification_whatsapp/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="create_verify_profile/3">
+
+    <span id="create_verify_profile/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_verify_profile/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create_verify_profile(connection, create_verify_profile_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_verify_profile(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="TelnyxAPI.Model.CreateVerifyProfileRequest.html#t:t/0">TelnyxAPI.Model.CreateVerifyProfileRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.VerifyProfileResponseDataWrapper.html#t:t/0">TelnyxAPI.Model.VerifyProfileResponseDataWrapper.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Create a Verify profile
+Creates a new Verify profile to associate verifications with.</p><h2 id="create_verify_profile/3-parameters" class="section-heading">
+  <a href="#create_verify_profile/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>create_verify_profile_request (CreateVerifyProfileRequest): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="create_verify_profile/3-returns" class="section-heading">
+  <a href="#create_verify_profile/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="delete_verify_profile/3">
+
+    <span id="delete_verify_profile/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_verify_profile/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">delete_verify_profile(connection, verify_profile_id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> delete_verify_profile(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.VerifyProfileResponseDataWrapper.html#t:t/0">TelnyxAPI.Model.VerifyProfileResponseDataWrapper.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Delete a Verify profile</p><h2 id="delete_verify_profile/3-parameters" class="section-heading">
+  <a href="#delete_verify_profile/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>verify_profile_id (String.t): The identifier of the Verify profile to delete.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="delete_verify_profile/3-returns" class="section-heading">
+  <a href="#delete_verify_profile/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="list_verifications/3">
+
+    <span id="list_verifications/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_verifications/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list_verifications(connection, phone_number, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list_verifications(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.ListVerificationsResponse.html#t:t/0">TelnyxAPI.Model.ListVerificationsResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>List verifications by phone number</p><h2 id="list_verifications/3-parameters" class="section-heading">
+  <a href="#list_verifications/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>phone_number (String.t): The phone number associated with the verifications to retrieve.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="list_verifications/3-returns" class="section-heading">
+  <a href="#list_verifications/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="list_verify_profiles/2">
+
+    <span id="list_verify_profiles/1"></span>
+
+  <div class="detail-header">
+    <a href="#list_verify_profiles/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list_verify_profiles(connection, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list_verify_profiles(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.ListVerifyProfilesResponse.html#t:t/0">TelnyxAPI.Model.ListVerifyProfilesResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>List all Verify profiles
+Gets a paginated list of Verify profiles.</p><h2 id="list_verify_profiles/2-parameters" class="section-heading">
+  <a href="#list_verify_profiles/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:filter_left_square_bracketname_right_square_bracket (String.t): </li><li>:page_left_square_bracketsize_right_square_bracket (integer()): </li><li>:page_left_square_bracketnumber_right_square_bracket (integer()): </li></ul></li></ul><h2 id="list_verify_profiles/2-returns" class="section-heading">
+  <a href="#list_verify_profiles/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="retrieve_verification/3">
+
+    <span id="retrieve_verification/2"></span>
+
+  <div class="detail-header">
+    <a href="#retrieve_verification/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">retrieve_verification(connection, verification_id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> retrieve_verification(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.RetrieveVerificationResponse.html#t:t/0">TelnyxAPI.Model.RetrieveVerificationResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Retrieve a verification</p><h2 id="retrieve_verification/3-parameters" class="section-heading">
+  <a href="#retrieve_verification/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>verification_id (String.t): The identifier of the verification to retrieve.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="retrieve_verification/3-returns" class="section-heading">
+  <a href="#retrieve_verification/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="retrieve_verify_profile/3">
+
+    <span id="retrieve_verify_profile/2"></span>
+
+  <div class="detail-header">
+    <a href="#retrieve_verify_profile/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">retrieve_verify_profile(connection, verify_profile_id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> retrieve_verify_profile(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.VerifyProfileResponseDataWrapper.html#t:t/0">TelnyxAPI.Model.VerifyProfileResponseDataWrapper.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Retrieve a Verify profile
+Gets a single Verify profile.</p><h2 id="retrieve_verify_profile/3-parameters" class="section-heading">
+  <a href="#retrieve_verify_profile/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>verify_profile_id (String.t): The identifier of the Verify profile to retrieve.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="retrieve_verify_profile/3-returns" class="section-heading">
+  <a href="#retrieve_verify_profile/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="update_verify_profile/4">
+
+    <span id="update_verify_profile/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_verify_profile/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">update_verify_profile(connection, verify_profile_id, update_verify_profile_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> update_verify_profile(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.UpdateVerifyProfileRequest.html#t:t/0">TelnyxAPI.Model.UpdateVerifyProfileRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.VerifyProfileResponseDataWrapper.html#t:t/0">TelnyxAPI.Model.VerifyProfileResponseDataWrapper.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Update a Verify profile</p><h2 id="update_verify_profile/4-parameters" class="section-heading">
+  <a href="#update_verify_profile/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>verify_profile_id (String.t): The identifier of the Verify profile to update.</li><li>update_verify_profile_request (UpdateVerifyProfileRequest): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="update_verify_profile/4-returns" class="section-heading">
+  <a href="#update_verify_profile/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="verify_verification_code/4">
+
+    <span id="verify_verification_code/3"></span>
+
+  <div class="detail-header">
+    <a href="#verify_verification_code/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">verify_verification_code(connection, phone_number, verify_verification_code_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> verify_verification_code(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.VerifyVerificationCodeRequest.html#t:t/0">TelnyxAPI.Model.VerifyVerificationCodeRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.VerifyVerificationCodeResponse.html#t:t/0">TelnyxAPI.Model.VerifyVerificationCodeResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Submit a verification code. Deprecation notice: `verify_profile_id' is now a mandatory field. The sunset date for this change is 2022-04-02 00:00:00.
+
+## Parameters
+
+- connection (TelnyxAPI.Connection): Connection to server
+- phone_number (String.t): The phone number associated with the verification code being verified.
+- verify_verification_code_request (VerifyVerificationCodeRequest): 
+- opts (KeywordList): [optional] Optional parameters
+## Returns
+
+{:ok, TelnyxAPI.Model.VerifyVerificationCodeResponse.t} on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+
+          <p>
+            On Hex.pm:
+
+            <span class="line">
+              <a href="https://hex.pm/packages/telnyx_api/2.0.0" class="line footer-hex-package">Package</a>
+              <a href="https://preview.hex.pm/preview/telnyx_api/2.0.0" class="line">Preview</a>
+
+                <a href="https://preview.hex.pm/preview/telnyx_api/2.0.0/show/lib/telnyx_api/api/verify.ex">(current file)</a>
+
+            </span>
+
+            <button class="line footer-button display-quick-switch">
+              Search
+            </button>
+          </p>
+
+        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.3) for the
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

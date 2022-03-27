@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.28.3">
+    <meta name="project" content="telnyx_api v2.0.0">
+
+    <title>TelnyxAPI.Api.ConferenceCommands — telnyx_api v2.0.0</title>
+    <link rel="stylesheet" href="dist/elixir-d5ff82e6b0f5651c0ac0.css" />
+
+    <script src="dist/sidebar_items-f49dba0c51.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-a088a6cc33ae3464193e.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+
+<section class="sidebar">
+  <button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+    <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+  </button>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <p class="sr-only">Search</p>
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+    <div class="sidebar-projectDetails">
+      <a href="Telnyx Elixir API.html" class="sidebar-projectName" translate="no">
+telnyx_api
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v2.0.0
+      </strong>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+  <span translate="no">TelnyxAPI.Api.ConferenceCommands</span> 
+  <small class="app-vsn" translate="no">(telnyx_api v2.0.0)</small>
+
+</h1>
+
+
+  <section id="moduledoc">
+<p>API calls for all endpoints tagged <code class="inline">ConferenceCommands</code>.</p>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#conference_dial_participant_in/4" translate="no">conference_dial_participant_in(connection, id, conference_call_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Dial a new participant into a conference
+Dials a phone number and, when the call is answered, automatically joins them into the specified conference.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.hangup</code> - <code class="inline">call.answered</code> - <code class="inline">conference.participant.joined</code> - <code class="inline">conference.participant.left</code> </p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#conference_hold_participants/4" translate="no">conference_hold_participants(connection, id, conference_hold_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Hold conference participants
+Hold a list of participants in a conference call</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#conference_join/4" translate="no">conference_join(connection, id, join_conference_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Join a conference
+Join an existing call leg to a conference. Issue the Join Conference command with the conference ID in the path and the <code class="inline">call_control_id</code> of the leg you wish to join to the conference as an attribute. The conference can have up to a certain amount of active participants, as set by the <code class="inline">max_participants</code> parameter in conference creation request.   <strong>Expected Webhooks:</strong>  - <code class="inline">conference.participant.joined</code> - <code class="inline">conference.participant.left</code> </p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#conference_leave/4" translate="no">conference_leave(connection, id, leave_conference_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Leave a conference
+Removes a call leg from a conference and moves it back to parked state. <strong>Expected Webhooks:</strong>  - <code class="inline">conference.participant.left</code> </p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#conference_mute_participants/4" translate="no">conference_mute_participants(connection, id, conference_mute_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Mute conference participants
+Mute a list of participants in a conference call</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#conference_play_audio/4" translate="no">conference_play_audio(connection, id, conference_play_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Play audio to conference participants
+Play audio to all or some participants on a conference call.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#conference_speak_text/4" translate="no">conference_speak_text(connection, id, conference_speak_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Speak text to conference participants
+Convert text to speech and play it to all or some participants.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#conference_start_recording/4" translate="no">conference_start_recording(connection, id, start_recording_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Conference recording start
+Start recording the conference. Recording will stop on conference end, or via the Stop Recording command.  <strong>Expected Webhooks:</strong>  - <code class="inline">conference.recording.saved</code></p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#conference_stop_audio/4" translate="no">conference_stop_audio(connection, id, conference_stop_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Stop audio being played on the conference
+Stop audio being played to all or some participants on a conference call.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#conference_stop_recording/4" translate="no">conference_stop_recording(connection, id, stop_recording_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Conference recording stop
+Stop recording the conference.  <strong>Expected Webhooks:</strong>  - <code class="inline">conference.recording.saved</code> </p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#conference_unhold_participants/4" translate="no">conference_unhold_participants(connection, id, conference_unhold_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Unhold conference participants
+Unhold a list of participants in a conference call</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#conference_unmute_participants/4" translate="no">conference_unmute_participants(connection, id, conference_unmute_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Unmute conference participants
+Unmute a list of participants in a conference call</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#conference_update/4" translate="no">conference_update(connection, id, update_conference_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Update conference participant
+Update conference participant supervisor_role</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#create_conference/3" translate="no">create_conference(connection, create_conference_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Create conference
+Create a conference from an existing call leg using a <code class="inline">call_control_id</code> and a conference name. Upon creating the conference, the call will be automatically bridged to the conference. Conferences will expire after all participants have left the conference or after 4 hours regardless of the number of active participants.  <strong>Expected Webhooks:</strong>  - <code class="inline">conference.created</code> - <code class="inline">conference.participant.joined</code> - <code class="inline">conference.participant.left</code> - <code class="inline">conference.ended</code> - <code class="inline">conference.recording.saved</code> - <code class="inline">conference.floor.changed</code> </p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#list_conference_participants/3" translate="no">list_conference_participants(connection, conference_id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>List conference participants
+Lists conference participants</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#list_conferences/2" translate="no">list_conferences(connection, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>List conferences
+Lists conferences. Conferences are created on demand, and will expire after all participants have left the conference or after 4 hours regardless of the number of active participants. Conferences are listed in descending order by <code class="inline">expires_at</code>.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#retrieve_conference/3" translate="no">retrieve_conference(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Retrieve a conference
+Retrieve an existing conference</p></div>
+
+      </div>
+
+  </div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="conference_dial_participant_in/4">
+
+    <span id="conference_dial_participant_in/3"></span>
+
+  <div class="detail-header">
+    <a href="#conference_dial_participant_in/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">conference_dial_participant_in(connection, id, conference_call_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> conference_dial_participant_in(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.ConferenceCallRequest.html#t:t/0">TelnyxAPI.Model.ConferenceCallRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ConferenceCommandResponse.html#t:t/0">TelnyxAPI.Model.ConferenceCommandResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Dial a new participant into a conference
+Dials a phone number and, when the call is answered, automatically joins them into the specified conference.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.hangup</code> - <code class="inline">call.answered</code> - <code class="inline">conference.participant.joined</code> - <code class="inline">conference.participant.left</code> </p><h2 id="conference_dial_participant_in/4-parameters" class="section-heading">
+  <a href="#conference_dial_participant_in/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Uniquely identifies the conference by id or name</li><li>conference_call_request (ConferenceCallRequest): Dial Into Conference request object</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="conference_dial_participant_in/4-returns" class="section-heading">
+  <a href="#conference_dial_participant_in/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="conference_hold_participants/4">
+
+    <span id="conference_hold_participants/3"></span>
+
+  <div class="detail-header">
+    <a href="#conference_hold_participants/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">conference_hold_participants(connection, id, conference_hold_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> conference_hold_participants(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.ConferenceHoldRequest.html#t:t/0">TelnyxAPI.Model.ConferenceHoldRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ConferenceCommandResponse.html#t:t/0">TelnyxAPI.Model.ConferenceCommandResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Hold conference participants
+Hold a list of participants in a conference call</p><h2 id="conference_hold_participants/4-parameters" class="section-heading">
+  <a href="#conference_hold_participants/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Uniquely identifies the conference by id or name</li><li>conference_hold_request (ConferenceHoldRequest): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="conference_hold_participants/4-returns" class="section-heading">
+  <a href="#conference_hold_participants/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="conference_join/4">
+
+    <span id="conference_join/3"></span>
+
+  <div class="detail-header">
+    <a href="#conference_join/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">conference_join(connection, id, join_conference_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> conference_join(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.JoinConferenceRequest.html#t:t/0">TelnyxAPI.Model.JoinConferenceRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ConferenceCommandResponse.html#t:t/0">TelnyxAPI.Model.ConferenceCommandResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Join a conference
+Join an existing call leg to a conference. Issue the Join Conference command with the conference ID in the path and the <code class="inline">call_control_id</code> of the leg you wish to join to the conference as an attribute. The conference can have up to a certain amount of active participants, as set by the <code class="inline">max_participants</code> parameter in conference creation request.   <strong>Expected Webhooks:</strong>  - <code class="inline">conference.participant.joined</code> - <code class="inline">conference.participant.left</code> </p><h2 id="conference_join/4-parameters" class="section-heading">
+  <a href="#conference_join/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Uniquely identifies the conference by id or name</li><li>join_conference_request (JoinConferenceRequest): Join Conference request object</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="conference_join/4-returns" class="section-heading">
+  <a href="#conference_join/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="conference_leave/4">
+
+    <span id="conference_leave/3"></span>
+
+  <div class="detail-header">
+    <a href="#conference_leave/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">conference_leave(connection, id, leave_conference_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> conference_leave(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.LeaveConferenceRequest.html#t:t/0">TelnyxAPI.Model.LeaveConferenceRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ConferenceCommandResponse.html#t:t/0">TelnyxAPI.Model.ConferenceCommandResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Leave a conference
+Removes a call leg from a conference and moves it back to parked state. <strong>Expected Webhooks:</strong>  - <code class="inline">conference.participant.left</code> </p><h2 id="conference_leave/4-parameters" class="section-heading">
+  <a href="#conference_leave/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Uniquely identifies the conference by id or name</li><li>leave_conference_request (LeaveConferenceRequest): Leave Conference request object</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="conference_leave/4-returns" class="section-heading">
+  <a href="#conference_leave/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="conference_mute_participants/4">
+
+    <span id="conference_mute_participants/3"></span>
+
+  <div class="detail-header">
+    <a href="#conference_mute_participants/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">conference_mute_participants(connection, id, conference_mute_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> conference_mute_participants(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.ConferenceMuteRequest.html#t:t/0">TelnyxAPI.Model.ConferenceMuteRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ConferenceCommandResponse.html#t:t/0">TelnyxAPI.Model.ConferenceCommandResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Mute conference participants
+Mute a list of participants in a conference call</p><h2 id="conference_mute_participants/4-parameters" class="section-heading">
+  <a href="#conference_mute_participants/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Uniquely identifies the conference by id or name</li><li>conference_mute_request (ConferenceMuteRequest): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="conference_mute_participants/4-returns" class="section-heading">
+  <a href="#conference_mute_participants/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="conference_play_audio/4">
+
+    <span id="conference_play_audio/3"></span>
+
+  <div class="detail-header">
+    <a href="#conference_play_audio/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">conference_play_audio(connection, id, conference_play_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> conference_play_audio(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.ConferencePlayRequest.html#t:t/0">TelnyxAPI.Model.ConferencePlayRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ConferenceCommandResponse.html#t:t/0">TelnyxAPI.Model.ConferenceCommandResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Play audio to conference participants
+Play audio to all or some participants on a conference call.</p><h2 id="conference_play_audio/4-parameters" class="section-heading">
+  <a href="#conference_play_audio/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Uniquely identifies the conference by id or name</li><li>conference_play_request (ConferencePlayRequest): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="conference_play_audio/4-returns" class="section-heading">
+  <a href="#conference_play_audio/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="conference_speak_text/4">
+
+    <span id="conference_speak_text/3"></span>
+
+  <div class="detail-header">
+    <a href="#conference_speak_text/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">conference_speak_text(connection, id, conference_speak_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> conference_speak_text(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.ConferenceSpeakRequest.html#t:t/0">TelnyxAPI.Model.ConferenceSpeakRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ConferenceCommandResponse.html#t:t/0">TelnyxAPI.Model.ConferenceCommandResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Speak text to conference participants
+Convert text to speech and play it to all or some participants.</p><h2 id="conference_speak_text/4-parameters" class="section-heading">
+  <a href="#conference_speak_text/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Specifies the conference by id or name</li><li>conference_speak_request (ConferenceSpeakRequest): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="conference_speak_text/4-returns" class="section-heading">
+  <a href="#conference_speak_text/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="conference_start_recording/4">
+
+    <span id="conference_start_recording/3"></span>
+
+  <div class="detail-header">
+    <a href="#conference_start_recording/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">conference_start_recording(connection, id, start_recording_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> conference_start_recording(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.StartRecordingRequest.html#t:t/0">TelnyxAPI.Model.StartRecordingRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ConferenceCommandResponse.html#t:t/0">TelnyxAPI.Model.ConferenceCommandResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Conference recording start
+Start recording the conference. Recording will stop on conference end, or via the Stop Recording command.  <strong>Expected Webhooks:</strong>  - <code class="inline">conference.recording.saved</code></p><h2 id="conference_start_recording/4-parameters" class="section-heading">
+  <a href="#conference_start_recording/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Specifies the conference to record by id or name</li><li>start_recording_request (StartRecordingRequest): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="conference_start_recording/4-returns" class="section-heading">
+  <a href="#conference_start_recording/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="conference_stop_audio/4">
+
+    <span id="conference_stop_audio/3"></span>
+
+  <div class="detail-header">
+    <a href="#conference_stop_audio/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">conference_stop_audio(connection, id, conference_stop_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> conference_stop_audio(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.ConferenceStopRequest.html#t:t/0">TelnyxAPI.Model.ConferenceStopRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ConferenceCommandResponse.html#t:t/0">TelnyxAPI.Model.ConferenceCommandResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Stop audio being played on the conference
+Stop audio being played to all or some participants on a conference call.</p><h2 id="conference_stop_audio/4-parameters" class="section-heading">
+  <a href="#conference_stop_audio/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Uniquely identifies the conference by id or name</li><li>conference_stop_request (ConferenceStopRequest): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="conference_stop_audio/4-returns" class="section-heading">
+  <a href="#conference_stop_audio/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="conference_stop_recording/4">
+
+    <span id="conference_stop_recording/3"></span>
+
+  <div class="detail-header">
+    <a href="#conference_stop_recording/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">conference_stop_recording(connection, id, stop_recording_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> conference_stop_recording(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.StopRecordingRequest.html#t:t/0">TelnyxAPI.Model.StopRecordingRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ConferenceCommandResponse.html#t:t/0">TelnyxAPI.Model.ConferenceCommandResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Conference recording stop
+Stop recording the conference.  <strong>Expected Webhooks:</strong>  - <code class="inline">conference.recording.saved</code> </p><h2 id="conference_stop_recording/4-parameters" class="section-heading">
+  <a href="#conference_stop_recording/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Specifies the conference to stop the recording for by id or name</li><li>stop_recording_request (StopRecordingRequest): Stop recording conference request</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="conference_stop_recording/4-returns" class="section-heading">
+  <a href="#conference_stop_recording/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="conference_unhold_participants/4">
+
+    <span id="conference_unhold_participants/3"></span>
+
+  <div class="detail-header">
+    <a href="#conference_unhold_participants/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">conference_unhold_participants(connection, id, conference_unhold_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> conference_unhold_participants(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.ConferenceUnholdRequest.html#t:t/0">TelnyxAPI.Model.ConferenceUnholdRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ConferenceCommandResponse.html#t:t/0">TelnyxAPI.Model.ConferenceCommandResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Unhold conference participants
+Unhold a list of participants in a conference call</p><h2 id="conference_unhold_participants/4-parameters" class="section-heading">
+  <a href="#conference_unhold_participants/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Uniquely identifies the conference by id or name</li><li>conference_unhold_request (ConferenceUnholdRequest): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="conference_unhold_participants/4-returns" class="section-heading">
+  <a href="#conference_unhold_participants/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="conference_unmute_participants/4">
+
+    <span id="conference_unmute_participants/3"></span>
+
+  <div class="detail-header">
+    <a href="#conference_unmute_participants/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">conference_unmute_participants(connection, id, conference_unmute_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> conference_unmute_participants(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.ConferenceUnmuteRequest.html#t:t/0">TelnyxAPI.Model.ConferenceUnmuteRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ConferenceCommandResponse.html#t:t/0">TelnyxAPI.Model.ConferenceCommandResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Unmute conference participants
+Unmute a list of participants in a conference call</p><h2 id="conference_unmute_participants/4-parameters" class="section-heading">
+  <a href="#conference_unmute_participants/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Uniquely identifies the conference by id or name</li><li>conference_unmute_request (ConferenceUnmuteRequest): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="conference_unmute_participants/4-returns" class="section-heading">
+  <a href="#conference_unmute_participants/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="conference_update/4">
+
+    <span id="conference_update/3"></span>
+
+  <div class="detail-header">
+    <a href="#conference_update/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">conference_update(connection, id, update_conference_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> conference_update(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.UpdateConferenceRequest.html#t:t/0">TelnyxAPI.Model.UpdateConferenceRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ConferenceCommandResponse.html#t:t/0">TelnyxAPI.Model.ConferenceCommandResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Update conference participant
+Update conference participant supervisor_role</p><h2 id="conference_update/4-parameters" class="section-heading">
+  <a href="#conference_update/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Uniquely identifies the conference by id or name</li><li>update_conference_request (UpdateConferenceRequest): Update Conference request object</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="conference_update/4-returns" class="section-heading">
+  <a href="#conference_update/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="create_conference/3">
+
+    <span id="create_conference/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_conference/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create_conference(connection, create_conference_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_conference(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="TelnyxAPI.Model.CreateConferenceRequest.html#t:t/0">TelnyxAPI.Model.CreateConferenceRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ConferenceResponse.html#t:t/0">TelnyxAPI.Model.ConferenceResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Create conference
+Create a conference from an existing call leg using a <code class="inline">call_control_id</code> and a conference name. Upon creating the conference, the call will be automatically bridged to the conference. Conferences will expire after all participants have left the conference or after 4 hours regardless of the number of active participants.  <strong>Expected Webhooks:</strong>  - <code class="inline">conference.created</code> - <code class="inline">conference.participant.joined</code> - <code class="inline">conference.participant.left</code> - <code class="inline">conference.ended</code> - <code class="inline">conference.recording.saved</code> - <code class="inline">conference.floor.changed</code> </p><h2 id="create_conference/3-parameters" class="section-heading">
+  <a href="#create_conference/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>create_conference_request (CreateConferenceRequest): Create a conference</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="create_conference/3-returns" class="section-heading">
+  <a href="#create_conference/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="list_conference_participants/3">
+
+    <span id="list_conference_participants/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_conference_participants/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list_conference_participants(connection, conference_id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list_conference_participants(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ListParticipantsResponse.html#t:t/0">TelnyxAPI.Model.ListParticipantsResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>List conference participants
+Lists conference participants</p><h2 id="list_conference_participants/3-parameters" class="section-heading">
+  <a href="#list_conference_participants/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>conference_id (String.t): Uniquely identifies the conference by id</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:filter_left_square_bracketmuted_right_square_bracket (boolean()): If present, participants will be filtered to those who are/are not muted</li><li>:filter_left_square_bracketon_hold_right_square_bracket (boolean()): If present, participants will be filtered to those who are/are not put on hold</li><li>:filter_left_square_bracketwhispering_right_square_bracket (boolean()): If present, participants will be filtered to those who are whispering or are not</li><li>:page_left_square_bracketnumber_right_square_bracket (integer()): The page number to load</li><li>:page_left_square_bracketsize_right_square_bracket (integer()): The size of the page</li></ul></li></ul><h2 id="list_conference_participants/3-returns" class="section-heading">
+  <a href="#list_conference_participants/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="list_conferences/2">
+
+    <span id="list_conferences/1"></span>
+
+  <div class="detail-header">
+    <a href="#list_conferences/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list_conferences(connection, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list_conferences(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ListConferencesResponse.html#t:t/0">TelnyxAPI.Model.ListConferencesResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>List conferences
+Lists conferences. Conferences are created on demand, and will expire after all participants have left the conference or after 4 hours regardless of the number of active participants. Conferences are listed in descending order by <code class="inline">expires_at</code>.</p><h2 id="list_conferences/2-parameters" class="section-heading">
+  <a href="#list_conferences/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:filter_left_square_bracketname_right_square_bracket (String.t): If present, conferences will be filtered to those with a matching <code class="inline">name</code> attribute. Matching is case-sensitive</li><li>:filter_left_square_bracketstatus_right_square_bracket (String.t): If present, conferences will be filtered by status.</li><li>:page_left_square_bracketnumber_right_square_bracket (integer()): The page number to load</li><li>:page_left_square_bracketsize_right_square_bracket (integer()): The size of the page</li></ul></li></ul><h2 id="list_conferences/2-returns" class="section-heading">
+  <a href="#list_conferences/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="retrieve_conference/3">
+
+    <span id="retrieve_conference/2"></span>
+
+  <div class="detail-header">
+    <a href="#retrieve_conference/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">retrieve_conference(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> retrieve_conference(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ConferenceResponse.html#t:t/0">TelnyxAPI.Model.ConferenceResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Retrieve a conference
+Retrieve an existing conference</p><h2 id="retrieve_conference/3-parameters" class="section-heading">
+  <a href="#retrieve_conference/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Uniquely identifies the conference by id</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="retrieve_conference/3-returns" class="section-heading">
+  <a href="#retrieve_conference/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+
+          <p>
+            On Hex.pm:
+
+            <span class="line">
+              <a href="https://hex.pm/packages/telnyx_api/2.0.0" class="line footer-hex-package">Package</a>
+              <a href="https://preview.hex.pm/preview/telnyx_api/2.0.0" class="line">Preview</a>
+
+                <a href="https://preview.hex.pm/preview/telnyx_api/2.0.0/show/lib/telnyx_api/api/conference_commands.ex">(current file)</a>
+
+            </span>
+
+            <button class="line footer-button display-quick-switch">
+              Search
+            </button>
+          </p>
+
+        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.3) for the
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

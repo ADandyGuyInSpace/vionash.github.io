@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.28.3">
+    <meta name="project" content="telnyx_api v2.0.0">
+
+    <title>TelnyxAPI.Api.PortingOrder — telnyx_api v2.0.0</title>
+    <link rel="stylesheet" href="dist/elixir-d5ff82e6b0f5651c0ac0.css" />
+
+    <script src="dist/sidebar_items-f49dba0c51.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-a088a6cc33ae3464193e.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+
+<section class="sidebar">
+  <button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+    <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+  </button>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <p class="sr-only">Search</p>
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+    <div class="sidebar-projectDetails">
+      <a href="Telnyx Elixir API.html" class="sidebar-projectName" translate="no">
+telnyx_api
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v2.0.0
+      </strong>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+  <span translate="no">TelnyxAPI.Api.PortingOrder</span> 
+  <small class="app-vsn" translate="no">(telnyx_api v2.0.0)</small>
+
+</h1>
+
+
+  <section id="moduledoc">
+<p>API calls for all endpoints tagged <code class="inline">PortingOrder</code>.</p>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#activate_porting_order/3" translate="no">activate_porting_order(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Activates every number on a porting order.
+Activate every numbers of a porting order asynchronously.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#cancel_porting_order/3" translate="no">cancel_porting_order(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Cancel a porting order
+Cancel a porting order</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#confirm_porting_order/3" translate="no">confirm_porting_order(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Submit a porting order.
+Confirm and submit your porting order.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#create_porting_order/3" translate="no">create_porting_order(connection, create_porting_order, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Create a porting order
+Creates a new porting order object.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#create_porting_order_comment/4" translate="no">create_porting_order_comment(connection, id, create_porting_order_comment, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Create a comment for a porting order
+Creates a new comment for a porting order.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#delete_porting_order/3" translate="no">delete_porting_order(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Delete a porting order
+Deletes an existing porting order. This operation is restrict to porting orders in draft state.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#get_porting_order/3" translate="no">get_porting_order(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Retrieve a porting order
+Retrieves the details of an existing porting order.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#get_porting_order_loa_template/3" translate="no">get_porting_order_loa_template(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Download a porting order loa template
+Download a porting order loa template</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#get_porting_order_sub_request/3" translate="no">get_porting_order_sub_request(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Retrieve the associated V1 sub_request_id and port_request_id
+Retrieve the associated V1 sub_request_id and port_request_id</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#get_porting_orders_activation_job/4" translate="no">get_porting_orders_activation_job(connection, id, activation_job_id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Retrieve a porting activation job
+Returns a porting activation job.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#list_allowed_foc_windows/3" translate="no">list_allowed_foc_windows(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>List allowed FOC dates
+Returns a list of allowed FOC dates for a porting order.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#list_porting_order_documents/3" translate="no">list_porting_order_documents(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>List all documents associated with a porting order
+Returns a list of all documents associated with a porting order.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#list_porting_orders/2" translate="no">list_porting_orders(connection, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>List all porting orders
+Returns a list of your porting order.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#list_porting_orders_activation_jobs/3" translate="no">list_porting_orders_activation_jobs(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>List all porting activation jobs
+Returns a list of your porting activation jobs.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#list_porting_orders_comments/3" translate="no">list_porting_orders_comments(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>List all comments of a porting order
+Returns a list of all comments of a porting order.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#list_porting_orders_exception_types/2" translate="no">list_porting_orders_exception_types(connection, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>List all exception types
+Returns a list of all possible exception types for a porting order.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#list_porting_phone_numbers/2" translate="no">list_porting_phone_numbers(connection, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>List all porting phone numbers
+Returns a list of your porting phone numbers.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#update_porting_order/4" translate="no">update_porting_order(connection, id, update_porting_order, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Edit a porting order
+Edits the details of an existing porting order.  Any or all of a porting order’s attributes may be included in the resource object included in a PATCH request.  If a request does not include all of the attributes for a resource, the system will interpret the missing attributes as if they were included with their current values. To explicitly set something to null, it must be included in the request with a null value.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#upload_porting_order_documents/4" translate="no">upload_porting_order_documents(connection, id, u_nknownbasetype, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Associate a list of documents with a porting order
+Associate a list of documents with a porting order.</p></div>
+
+      </div>
+
+  </div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="activate_porting_order/3">
+
+    <span id="activate_porting_order/2"></span>
+
+  <div class="detail-header">
+    <a href="#activate_porting_order/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">activate_porting_order(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> activate_porting_order(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ShowPortingOrdersActivationJob.html#t:t/0">TelnyxAPI.Model.ShowPortingOrdersActivationJob.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Activates every number on a porting order.
+Activate every numbers of a porting order asynchronously.</p><h2 id="activate_porting_order/3-parameters" class="section-heading">
+  <a href="#activate_porting_order/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Porting Order id</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="activate_porting_order/3-returns" class="section-heading">
+  <a href="#activate_porting_order/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="cancel_porting_order/3">
+
+    <span id="cancel_porting_order/2"></span>
+
+  <div class="detail-header">
+    <a href="#cancel_porting_order/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">cancel_porting_order(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> cancel_porting_order(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ShowPortingOrder.html#t:t/0">TelnyxAPI.Model.ShowPortingOrder.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Cancel a porting order
+Cancel a porting order</p><h2 id="cancel_porting_order/3-parameters" class="section-heading">
+  <a href="#cancel_porting_order/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Porting Order id</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="cancel_porting_order/3-returns" class="section-heading">
+  <a href="#cancel_porting_order/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="confirm_porting_order/3">
+
+    <span id="confirm_porting_order/2"></span>
+
+  <div class="detail-header">
+    <a href="#confirm_porting_order/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">confirm_porting_order(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> confirm_porting_order(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ShowPortingOrder.html#t:t/0">TelnyxAPI.Model.ShowPortingOrder.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Submit a porting order.
+Confirm and submit your porting order.</p><h2 id="confirm_porting_order/3-parameters" class="section-heading">
+  <a href="#confirm_porting_order/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Porting Order id</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="confirm_porting_order/3-returns" class="section-heading">
+  <a href="#confirm_porting_order/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="create_porting_order/3">
+
+    <span id="create_porting_order/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_porting_order/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create_porting_order(connection, create_porting_order, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_porting_order(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="TelnyxAPI.Model.CreatePortingOrder.html#t:t/0">TelnyxAPI.Model.CreatePortingOrder.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ListDraftPortingOrderWithoutPagination.html#t:t/0">TelnyxAPI.Model.ListDraftPortingOrderWithoutPagination.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Create a porting order
+Creates a new porting order object.</p><h2 id="create_porting_order/3-parameters" class="section-heading">
+  <a href="#create_porting_order/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>create_porting_order (CreatePortingOrder):</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="create_porting_order/3-returns" class="section-heading">
+  <a href="#create_porting_order/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="create_porting_order_comment/4">
+
+    <span id="create_porting_order_comment/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_porting_order_comment/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">create_porting_order_comment(connection, id, create_porting_order_comment, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> create_porting_order_comment(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.CreatePortingOrderComment.html#t:t/0">TelnyxAPI.Model.CreatePortingOrderComment.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ShowPortingOrderComment.html#t:t/0">TelnyxAPI.Model.ShowPortingOrderComment.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Create a comment for a porting order
+Creates a new comment for a porting order.</p><h2 id="create_porting_order_comment/4-parameters" class="section-heading">
+  <a href="#create_porting_order_comment/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Porting Order id</li><li>create_porting_order_comment (CreatePortingOrderComment):</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="create_porting_order_comment/4-returns" class="section-heading">
+  <a href="#create_porting_order_comment/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="delete_porting_order/3">
+
+    <span id="delete_porting_order/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_porting_order/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">delete_porting_order(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> delete_porting_order(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, nil} | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Delete a porting order
+Deletes an existing porting order. This operation is restrict to porting orders in draft state.</p><h2 id="delete_porting_order/3-parameters" class="section-heading">
+  <a href="#delete_porting_order/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Porting Order id</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="delete_porting_order/3-returns" class="section-heading">
+  <a href="#delete_porting_order/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="get_porting_order/3">
+
+    <span id="get_porting_order/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_porting_order/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_porting_order(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> get_porting_order(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ShowPortingOrder.html#t:t/0">TelnyxAPI.Model.ShowPortingOrder.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Retrieve a porting order
+Retrieves the details of an existing porting order.</p><h2 id="get_porting_order/3-parameters" class="section-heading">
+  <a href="#get_porting_order/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Porting Order id</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:include_phone_numbers (boolean()): Include the first 50 phone number objects in the results</li></ul></li></ul><h2 id="get_porting_order/3-returns" class="section-heading">
+  <a href="#get_porting_order/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="get_porting_order_loa_template/3">
+
+    <span id="get_porting_order_loa_template/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_porting_order_loa_template/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_porting_order_loa_template(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> get_porting_order_loa_template(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, nil} | {:ok, <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>()} | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Download a porting order loa template
+Download a porting order loa template</p><h2 id="get_porting_order_loa_template/3-parameters" class="section-heading">
+  <a href="#get_porting_order_loa_template/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Porting Order id</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="get_porting_order_loa_template/3-returns" class="section-heading">
+  <a href="#get_porting_order_loa_template/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="get_porting_order_sub_request/3">
+
+    <span id="get_porting_order_sub_request/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_porting_order_sub_request/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_porting_order_sub_request(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> get_porting_order_sub_request(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.SubRequestByPortingOrder.html#t:t/0">TelnyxAPI.Model.SubRequestByPortingOrder.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Retrieve the associated V1 sub_request_id and port_request_id
+Retrieve the associated V1 sub_request_id and port_request_id</p><h2 id="get_porting_order_sub_request/3-parameters" class="section-heading">
+  <a href="#get_porting_order_sub_request/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Porting Order id</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="get_porting_order_sub_request/3-returns" class="section-heading">
+  <a href="#get_porting_order_sub_request/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="get_porting_orders_activation_job/4">
+
+    <span id="get_porting_orders_activation_job/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_porting_orders_activation_job/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get_porting_orders_activation_job(connection, id, activation_job_id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> get_porting_orders_activation_job(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ShowPortingOrdersActivationJob.html#t:t/0">TelnyxAPI.Model.ShowPortingOrdersActivationJob.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Retrieve a porting activation job
+Returns a porting activation job.</p><h2 id="get_porting_orders_activation_job/4-parameters" class="section-heading">
+  <a href="#get_porting_orders_activation_job/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Porting Order id</li><li>activation_job_id (String.t): Activation Job Identifier</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="get_porting_orders_activation_job/4-returns" class="section-heading">
+  <a href="#get_porting_orders_activation_job/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="list_allowed_foc_windows/3">
+
+    <span id="list_allowed_foc_windows/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_allowed_foc_windows/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list_allowed_foc_windows(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list_allowed_foc_windows(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ListAllowedFocWindow.html#t:t/0">TelnyxAPI.Model.ListAllowedFocWindow.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>List allowed FOC dates
+Returns a list of allowed FOC dates for a porting order.</p><h2 id="list_allowed_foc_windows/3-parameters" class="section-heading">
+  <a href="#list_allowed_foc_windows/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Porting Order id</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="list_allowed_foc_windows/3-returns" class="section-heading">
+  <a href="#list_allowed_foc_windows/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="list_porting_order_documents/3">
+
+    <span id="list_porting_order_documents/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_porting_order_documents/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list_porting_order_documents(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list_porting_order_documents(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ListPortingOrderDocuments.html#t:t/0">TelnyxAPI.Model.ListPortingOrderDocuments.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>List all documents associated with a porting order
+Returns a list of all documents associated with a porting order.</p><h2 id="list_porting_order_documents/3-parameters" class="section-heading">
+  <a href="#list_porting_order_documents/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Porting Order id</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:page_left_square_bracketnumber_right_square_bracket (integer()): The page number to load</li><li>:page_left_square_bracketsize_right_square_bracket (integer()): The size of the page</li></ul></li></ul><h2 id="list_porting_order_documents/3-returns" class="section-heading">
+  <a href="#list_porting_order_documents/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="list_porting_orders/2">
+
+    <span id="list_porting_orders/1"></span>
+
+  <div class="detail-header">
+    <a href="#list_porting_orders/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list_porting_orders(connection, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list_porting_orders(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ListPortingOrder.html#t:t/0">TelnyxAPI.Model.ListPortingOrder.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>List all porting orders
+Returns a list of your porting order.</p><h2 id="list_porting_orders/2-parameters" class="section-heading">
+  <a href="#list_porting_orders/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:page_left_square_bracketnumber_right_square_bracket (integer()): The page number to load</li><li>:page_left_square_bracketsize_right_square_bracket (integer()): The size of the page</li><li>:include_phone_numbers (boolean()): Include the first 50 phone number objects in the results</li><li>:filter_left_square_bracketstatus_right_square_bracket (String.t): Filter results by status</li><li>:filter_left_square_bracketcustomer_reference_right_square_bracket (String.t): Filter results by user reference</li><li>:filter_left_square_bracketphone_numbers_right_square_bracket_left_square_bracketcountry_code_right_square_bracket (String.t): Filter results by country ISO 3166-1 alpha-2 code</li><li>:filter_left_square_bracketphone_numbers_right_square_bracket_left_square_bracketcarrier_name_right_square_bracket (String.t): Filter results by old service provider</li><li>:filter_left_square_bracketmisc_right_square_bracket_left_square_brackettype_right_square_bracket (TelnyxAPI.Model.PortingOrderType.t): Filter results by porting order type</li><li>:filter_left_square_bracketend_user_right_square_bracket_left_square_bracketadmin_right_square_bracket_left_square_bracketentity_name_right_square_bracket (String.t): Filter results by person or company name</li><li>:filter_left_square_bracketend_user_right_square_bracket_left_square_bracketadmin_right_square_bracket_left_square_bracketauth_person_name_right_square_bracket (String.t): Filter results by authorized person</li><li>:filter_left_square_bracketactivation_settings_right_square_bracket_left_square_bracketfast_port_eligible_right_square_bracket (boolean()): Filter results by fast port eligible</li><li>:filter_left_square_bracketactivation_settings_right_square_bracket_left_square_bracketfoc_datetime_requested_right_square_bracket_left_square_bracketgt_right_square_bracket (String.t): Filter results by foc date later than this value</li><li>:filter_left_square_bracketactivation_settings_right_square_bracket_left_square_bracketfoc_datetime_requested_right_square_bracket_left_square_bracketlt_right_square_bracket (String.t): Filter results by foc date earlier than this value</li><li>:sort (String.t): Specifies the sort order for results. If not given, results are sorted by created_at in descending order.</li></ul></li></ul><h2 id="list_porting_orders/2-returns" class="section-heading">
+  <a href="#list_porting_orders/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="list_porting_orders_activation_jobs/3">
+
+    <span id="list_porting_orders_activation_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_porting_orders_activation_jobs/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list_porting_orders_activation_jobs(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list_porting_orders_activation_jobs(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ListPortingOrdersActivationJobs.html#t:t/0">TelnyxAPI.Model.ListPortingOrdersActivationJobs.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>List all porting activation jobs
+Returns a list of your porting activation jobs.</p><h2 id="list_porting_orders_activation_jobs/3-parameters" class="section-heading">
+  <a href="#list_porting_orders_activation_jobs/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Porting Order id</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:page_left_square_bracketnumber_right_square_bracket (integer()): The page number to load</li><li>:page_left_square_bracketsize_right_square_bracket (integer()): The size of the page</li></ul></li></ul><h2 id="list_porting_orders_activation_jobs/3-returns" class="section-heading">
+  <a href="#list_porting_orders_activation_jobs/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="list_porting_orders_comments/3">
+
+    <span id="list_porting_orders_comments/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_porting_orders_comments/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list_porting_orders_comments(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list_porting_orders_comments(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ListPortingOrdersComments.html#t:t/0">TelnyxAPI.Model.ListPortingOrdersComments.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>List all comments of a porting order
+Returns a list of all comments of a porting order.</p><h2 id="list_porting_orders_comments/3-parameters" class="section-heading">
+  <a href="#list_porting_orders_comments/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Porting Order id</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:page_left_square_bracketnumber_right_square_bracket (integer()): The page number to load</li><li>:page_left_square_bracketsize_right_square_bracket (integer()): The size of the page</li></ul></li></ul><h2 id="list_porting_orders_comments/3-returns" class="section-heading">
+  <a href="#list_porting_orders_comments/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="list_porting_orders_exception_types/2">
+
+    <span id="list_porting_orders_exception_types/1"></span>
+
+  <div class="detail-header">
+    <a href="#list_porting_orders_exception_types/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list_porting_orders_exception_types(connection, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list_porting_orders_exception_types(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ListPortingOrdersExceptionTypes.html#t:t/0">TelnyxAPI.Model.ListPortingOrdersExceptionTypes.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>List all exception types
+Returns a list of all possible exception types for a porting order.</p><h2 id="list_porting_orders_exception_types/2-parameters" class="section-heading">
+  <a href="#list_porting_orders_exception_types/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="list_porting_orders_exception_types/2-returns" class="section-heading">
+  <a href="#list_porting_orders_exception_types/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="list_porting_phone_numbers/2">
+
+    <span id="list_porting_phone_numbers/1"></span>
+
+  <div class="detail-header">
+    <a href="#list_porting_phone_numbers/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list_porting_phone_numbers(connection, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list_porting_phone_numbers(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ListPortingPhoneNumbers.html#t:t/0">TelnyxAPI.Model.ListPortingPhoneNumbers.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>List all porting phone numbers
+Returns a list of your porting phone numbers.</p><h2 id="list_porting_phone_numbers/2-parameters" class="section-heading">
+  <a href="#list_porting_phone_numbers/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:page_left_square_bracketnumber_right_square_bracket (integer()): The page number to load</li><li>:page_left_square_bracketsize_right_square_bracket (integer()): The size of the page</li><li>:filter_left_square_bracketporting_order_id_right_square_bracket (String.t): Filter results by porting order id</li><li>:filter_left_square_bracketporting_order_id_right_square_bracket_left_square_bracketin_right_square_bracket_left_square_bracket_right_square_bracket ([String.t]): Filter results by a list of porting order ids</li><li>:filter_left_square_bracketsupport_key_right_square_bracket_left_square_bracketeq_right_square_bracket (String.t): Filter results by support key</li><li>:filter_left_square_bracketsupport_key_right_square_bracket_left_square_bracketin_right_square_bracket_left_square_bracket_right_square_bracket ([String.t]): Filter results by a list of support keys</li><li>:filter_left_square_bracketphone_number_right_square_bracket (String.t): Filter results by phone number</li><li>:filter_left_square_bracketphone_number_right_square_bracket_left_square_bracketin_right_square_bracket_left_square_bracket_right_square_bracket ([String.t]): Filter results by a list of phone numbers</li><li>:filter_left_square_bracketporting_order_status_right_square_bracket (String.t): Filter results by porting order status</li><li>:filter_left_square_bracketactivation_status_right_square_bracket (TelnyxAPI.Model.PortingOrderActivationStatus.t): Filter results by activation status</li><li>:filter_left_square_bracketportability_status_right_square_bracket (TelnyxAPI.Model.PortabilityStatus.t): Filter results by portability status</li></ul></li></ul><h2 id="list_porting_phone_numbers/2-returns" class="section-heading">
+  <a href="#list_porting_phone_numbers/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="update_porting_order/4">
+
+    <span id="update_porting_order/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_porting_order/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">update_porting_order(connection, id, update_porting_order, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> update_porting_order(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.UpdatePortingOrder.html#t:t/0">TelnyxAPI.Model.UpdatePortingOrder.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.ShowPortingOrder.html#t:t/0">TelnyxAPI.Model.ShowPortingOrder.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Edit a porting order
+Edits the details of an existing porting order.  Any or all of a porting order’s attributes may be included in the resource object included in a PATCH request.  If a request does not include all of the attributes for a resource, the system will interpret the missing attributes as if they were included with their current values. To explicitly set something to null, it must be included in the request with a null value.</p><h2 id="update_porting_order/4-parameters" class="section-heading">
+  <a href="#update_porting_order/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Porting Order id</li><li>update_porting_order (UpdatePortingOrder):</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="update_porting_order/4-returns" class="section-heading">
+  <a href="#update_porting_order/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="upload_porting_order_documents/4">
+
+    <span id="upload_porting_order_documents/3"></span>
+
+  <div class="detail-header">
+    <a href="#upload_porting_order_documents/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">upload_porting_order_documents(connection, id, u_nknownbasetype, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Associate a list of documents with a porting order
+Associate a list of documents with a porting order.</p><h2 id="upload_porting_order_documents/4-parameters" class="section-heading">
+  <a href="#upload_porting_order_documents/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Porting Order id</li><li>u_nknownbasetype (UNKNOWN_BASE_TYPE):</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="upload_porting_order_documents/4-returns" class="section-heading">
+  <a href="#upload_porting_order_documents/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+
+          <p>
+            On Hex.pm:
+
+            <span class="line">
+              <a href="https://hex.pm/packages/telnyx_api/2.0.0" class="line footer-hex-package">Package</a>
+              <a href="https://preview.hex.pm/preview/telnyx_api/2.0.0" class="line">Preview</a>
+
+                <a href="https://preview.hex.pm/preview/telnyx_api/2.0.0/show/lib/telnyx_api/api/porting_order.ex">(current file)</a>
+
+            </span>
+
+            <button class="line footer-button display-quick-switch">
+              Search
+            </button>
+          </p>
+
+        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.3) for the
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

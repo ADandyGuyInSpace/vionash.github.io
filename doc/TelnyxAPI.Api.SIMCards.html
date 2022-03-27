@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.28.3">
+    <meta name="project" content="telnyx_api v2.0.0">
+
+    <title>TelnyxAPI.Api.SIMCards — telnyx_api v2.0.0</title>
+    <link rel="stylesheet" href="dist/elixir-d5ff82e6b0f5651c0ac0.css" />
+
+    <script src="dist/sidebar_items-f49dba0c51.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-a088a6cc33ae3464193e.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+
+<section class="sidebar">
+  <button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+    <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+  </button>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <p class="sr-only">Search</p>
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+    <div class="sidebar-projectDetails">
+      <a href="Telnyx Elixir API.html" class="sidebar-projectName" translate="no">
+telnyx_api
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v2.0.0
+      </strong>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+  <span translate="no">TelnyxAPI.Api.SIMCards</span> 
+  <small class="app-vsn" translate="no">(telnyx_api v2.0.0)</small>
+
+</h1>
+
+
+  <section id="moduledoc">
+<p>API calls for all endpoints tagged <code class="inline">SIMCards</code>.</p>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#bulk_sim_card_network_preferences/2" translate="no">bulk_sim_card_network_preferences(connection, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Bulk Network Preferences for SIM cards
+This API allows dispatching the same operation described for the PUT sim_cards/:sim_card_id/network_preferences API for multiple SIM cards at once.&lt;br/&gt;&lt;br/&gt; Although, a SIM card network preference may fail individually under any validation triggered as a consequence of its state. For example, a SIM can't have an in-progress OTA update for applying a Network Preference, so they'll fail when requested in this API. In that scenario, the specific error will be present in the response along with the successful definitions in the &quot;errors&quot; response node. </p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#list_sim_card_data_usage_notifications/2" translate="no">list_sim_card_data_usage_notifications(connection, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>List SIM card data usage notifications
+Lists a paginated collection of SIM card data usage notifications. It enables exploring the collection using specific filters.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#post_validate_registration_codes/3" translate="no">post_validate_registration_codes(connection, create_sim_card_validate_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Validate SIM cards registration codes
+It validates whether SIM card registration codes are valid or not.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#remove_sim_card_public_ip/3" translate="no">remove_sim_card_public_ip(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Request removing a SIM card public IP
+This API removes an existing public IP from a SIM card. &lt;br/&gt;&lt;br/&gt;  The API will trigger an asynchronous operation called a SIM Card Action. The status of the SIM Card Action can be followed through the <a href="https://developers.telnyx.com/docs/api/v2/wireless/SIM-Card-Actions#ListSIMCardActions">List SIM Card Action</a> API.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#s_im_card_network_preferences_delete/3" translate="no">s_im_card_network_preferences_delete(connection, sim_card_id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>DELETE network preferences
+This API asynchronously removes the custom-defined network preferences settings. After this operation is done the Telnyx default settings, the same applied for an unaltered SIM card, will be in place. </p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#s_im_card_network_preferences_get/3" translate="no">s_im_card_network_preferences_get(connection, sim_card_id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Get network preferences
+It returns the network preferences currently applied in the SIM card. </p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#s_im_card_network_preferences_put/3" translate="no">s_im_card_network_preferences_put(connection, sim_card_id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Set network preferences
+This API allows setting or updating a SIM card network preference. &lt;br/&gt;&lt;br/&gt; Every SIM card has default network preferences defined on Telnyx. These preferences will determine how a SIMCard will connect to the network by considering a list of preferable operators.&lt;br/&gt;&lt;br/&gt; There can be multiple scenarios where an operator can be preferred over another, for example, when a specific mobile operator can provide better network latency or better pricing. </p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#s_im_card_public_ip_get/3" translate="no">s_im_card_public_ip_get(connection, sim_card_id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Get SIM card public IP definition
+It returns the public IP requested for a SIM card. </p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#set_sim_card_public_ip/3" translate="no">set_sim_card_public_ip(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Request setting a SIM card public IP
+This API makes a SIM card reachable on the public internet by mapping a random public IP to the SIM card. &lt;br/&gt;&lt;br/&gt;  The API will trigger an asynchronous operation called a SIM Card Action. The status of the SIM Card Action can be followed through the <a href="https://developers.telnyx.com/docs/api/v2/wireless/SIM-Card-Actions#ListSIMCardActions">List SIM Card Action</a> API. &lt;br/&gt;&lt;br/&gt;  Setting a Public IP to a SIM Card incurs a charge and will only succeed if the account has sufficient funds.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#sim_card_data_usage_notifications_delete/3" translate="no">sim_card_data_usage_notifications_delete(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Delete SIM card data usage notifications
+Delete the SIM Card Data Usage Notification.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#sim_card_data_usage_notifications_get/3" translate="no">sim_card_data_usage_notifications_get(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Get a single SIM card data usage notification
+Get a single SIM Card Data Usage Notification.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#sim_card_data_usage_notifications_patch/4" translate="no">sim_card_data_usage_notifications_patch(connection, id, sim_card_data_usage_notification, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Updates information for a SIM Card Data Usage Notification
+Updates information for a SIM Card Data Usage Notification.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#sim_card_data_usage_notifications_post/3" translate="no">sim_card_data_usage_notifications_post(connection, create_sim_card_data_usage_notification_request, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Create a new SIM card data usage notification
+Creates a new SIM card data usage notification.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#sim_card_delete/3" translate="no">sim_card_delete(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Deletes a SIM card
+The SIM card will be decommissioned, removed from your account and you will stop being charged.&lt;br /&gt;The SIM card won't be able to connect to the network after the deletion is completed, thus making it impossible to consume data.&lt;br/&gt; Transitioning to the disabled state may take a period of time.&lt;/br&gt; Until the transition is completed, the SIM card status will be disabling &lt;code&gt;disabling&lt;/code&gt;.&lt;br /&gt;In order to re-enable the SIM card, you will need to re-register it.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#sim_card_disable/3" translate="no">sim_card_disable(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Request a SIM card disable
+This API disables a SIM card, disconnecting it from the network and making it impossible to consume data.&lt;br/&gt; The API will trigger an asynchronous operation called a SIM Card Action. Transitioning to the disabled state may take a period of time. The status of the SIM Card Action can be followed through the <a href="https://developers.telnyx.com/docs/api/v2/wireless/SIM-Card-Actions#ListSIMCardActions">List SIM Card Action</a> API. </p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#sim_card_enable/3" translate="no">sim_card_enable(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Request a SIM card enable
+This API enables a SIM card, connecting it to the network and making it possible to consume data.&lt;br/&gt; To enable a SIM card, it must be associated with a SIM card group.&lt;br/&gt; The API will trigger an asynchronous operation called a SIM Card Action. Transitioning to the enabled state may take a period of time. The status of the SIM Card Action can be followed through the <a href="https://developers.telnyx.com/docs/api/v2/wireless/SIM-Card-Actions#ListSIMCardActions">List SIM Card Action</a> API. </p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#sim_card_get/3" translate="no">sim_card_get(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Get SIM card
+Returns the details regarding a specific SIM card.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#sim_card_register/3" translate="no">sim_card_register(connection, sim_card_registration, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Register SIM cards
+Register the SIM cards associated with the provided registration codes to the current user's account.&lt;br/&gt;&lt;br/&gt; If &lt;code&gt;sim_card_group_id&lt;/code&gt; is provided, the SIM cards will be associated with that group. Otherwise, the default group for the current user will be used.&lt;br/&gt;&lt;br/&gt; </p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#sim_card_set_standby/3" translate="no">sim_card_set_standby(connection, id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Request setting a SIM card to standby
+The SIM card will be able to connect to the network once the process to set it to standby has been completed, thus making it possible to consume data.&lt;br/&gt; To set a SIM card to standby, it must be associated with SIM card group.&lt;br/&gt; The API will trigger an asynchronous operation called a SIM Card Action. Transitioning to the standby state may take a period of time. The status of the SIM Card Action can be followed through the <a href="https://developers.telnyx.com/docs/api/v2/wireless/SIM-Card-Actions#ListSIMCardActions">List SIM Card Action</a> API. </p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#sim_card_update/4" translate="no">sim_card_update(connection, id, sim_card, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Update a SIM card
+Updates SIM card data</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#sim_cards_get/2" translate="no">sim_cards_get(connection, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Get all SIM cards
+Get all SIM cards belonging to the user that match the given filters.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#wireless_connectivity_logs_get/3" translate="no">wireless_connectivity_logs_get(connection, sim_card_id, opts \\ [])</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>List wireless connectivity logs
+This API allows listing a paginated collection of Wireless Connectivity Logs associated with a SIM Card, for troubleshooting purposes.</p></div>
+
+      </div>
+
+  </div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="bulk_sim_card_network_preferences/2">
+
+    <span id="bulk_sim_card_network_preferences/1"></span>
+
+  <div class="detail-header">
+    <a href="#bulk_sim_card_network_preferences/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">bulk_sim_card_network_preferences(connection, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> bulk_sim_card_network_preferences(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.BulkSimCardNetworkPreferenceResponse.html#t:t/0">TelnyxAPI.Model.BulkSimCardNetworkPreferenceResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Bulk Network Preferences for SIM cards
+This API allows dispatching the same operation described for the PUT sim_cards/:sim_card_id/network_preferences API for multiple SIM cards at once.&lt;br/&gt;&lt;br/&gt; Although, a SIM card network preference may fail individually under any validation triggered as a consequence of its state. For example, a SIM can't have an in-progress OTA update for applying a Network Preference, so they'll fail when requested in this API. In that scenario, the specific error will be present in the response along with the successful definitions in the &quot;errors&quot; response node. </p><h2 id="bulk_sim_card_network_preferences/2-parameters" class="section-heading">
+  <a href="#bulk_sim_card_network_preferences/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:body (BulkUpdateSimNetworkPreference): </li></ul></li></ul><h2 id="bulk_sim_card_network_preferences/2-returns" class="section-heading">
+  <a href="#bulk_sim_card_network_preferences/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="list_sim_card_data_usage_notifications/2">
+
+    <span id="list_sim_card_data_usage_notifications/1"></span>
+
+  <div class="detail-header">
+    <a href="#list_sim_card_data_usage_notifications/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list_sim_card_data_usage_notifications(connection, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list_sim_card_data_usage_notifications(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.SimCardDataUsageNotificationCollection.html#t:t/0">TelnyxAPI.Model.SimCardDataUsageNotificationCollection.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>List SIM card data usage notifications
+Lists a paginated collection of SIM card data usage notifications. It enables exploring the collection using specific filters.</p><h2 id="list_sim_card_data_usage_notifications/2-parameters" class="section-heading">
+  <a href="#list_sim_card_data_usage_notifications/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:page_left_square_bracketnumber_right_square_bracket (integer()): The page number to load</li><li>:page_left_square_bracketsize_right_square_bracket (integer()): The size of the page</li><li>:filter_left_square_bracketsim_card_id_right_square_bracket (String.t): A valid SIM card ID.</li></ul></li></ul><h2 id="list_sim_card_data_usage_notifications/2-returns" class="section-heading">
+  <a href="#list_sim_card_data_usage_notifications/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="post_validate_registration_codes/3">
+
+    <span id="post_validate_registration_codes/2"></span>
+
+  <div class="detail-header">
+    <a href="#post_validate_registration_codes/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">post_validate_registration_codes(connection, create_sim_card_validate_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> post_validate_registration_codes(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="TelnyxAPI.Model.CreateSimCardValidateRequest.html#t:t/0">TelnyxAPI.Model.CreateSimCardValidateRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.SimCardRegistrationCodeValidations.html#t:t/0">TelnyxAPI.Model.SimCardRegistrationCodeValidations.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Validate SIM cards registration codes
+It validates whether SIM card registration codes are valid or not.</p><h2 id="post_validate_registration_codes/3-parameters" class="section-heading">
+  <a href="#post_validate_registration_codes/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>create_sim_card_validate_request (CreateSimCardValidateRequest): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="post_validate_registration_codes/3-returns" class="section-heading">
+  <a href="#post_validate_registration_codes/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="remove_sim_card_public_ip/3">
+
+    <span id="remove_sim_card_public_ip/2"></span>
+
+  <div class="detail-header">
+    <a href="#remove_sim_card_public_ip/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">remove_sim_card_public_ip(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> remove_sim_card_public_ip(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.SimCardActionResponse.html#t:t/0">TelnyxAPI.Model.SimCardActionResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Request removing a SIM card public IP
+This API removes an existing public IP from a SIM card. &lt;br/&gt;&lt;br/&gt;  The API will trigger an asynchronous operation called a SIM Card Action. The status of the SIM Card Action can be followed through the <a href="https://developers.telnyx.com/docs/api/v2/wireless/SIM-Card-Actions#ListSIMCardActions">List SIM Card Action</a> API.</p><h2 id="remove_sim_card_public_ip/3-parameters" class="section-heading">
+  <a href="#remove_sim_card_public_ip/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="remove_sim_card_public_ip/3-returns" class="section-heading">
+  <a href="#remove_sim_card_public_ip/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="s_im_card_network_preferences_delete/3">
+
+    <span id="s_im_card_network_preferences_delete/2"></span>
+
+  <div class="detail-header">
+    <a href="#s_im_card_network_preferences_delete/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">s_im_card_network_preferences_delete(connection, sim_card_id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> s_im_card_network_preferences_delete(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.DeleteSimCardNetworkPreferenceResponse.html#t:t/0">TelnyxAPI.Model.DeleteSimCardNetworkPreferenceResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>DELETE network preferences
+This API asynchronously removes the custom-defined network preferences settings. After this operation is done the Telnyx default settings, the same applied for an unaltered SIM card, will be in place. </p><h2 id="s_im_card_network_preferences_delete/3-parameters" class="section-heading">
+  <a href="#s_im_card_network_preferences_delete/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>sim_card_id (String.t): Identifies a SIM card.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="s_im_card_network_preferences_delete/3-returns" class="section-heading">
+  <a href="#s_im_card_network_preferences_delete/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="s_im_card_network_preferences_get/3">
+
+    <span id="s_im_card_network_preferences_get/2"></span>
+
+  <div class="detail-header">
+    <a href="#s_im_card_network_preferences_get/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">s_im_card_network_preferences_get(connection, sim_card_id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> s_im_card_network_preferences_get(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.SimCardNetworkPreferenceWithOtaUpdatesResponse.html#t:t/0">TelnyxAPI.Model.SimCardNetworkPreferenceWithOtaUpdatesResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Get network preferences
+It returns the network preferences currently applied in the SIM card. </p><h2 id="s_im_card_network_preferences_get/3-parameters" class="section-heading">
+  <a href="#s_im_card_network_preferences_get/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>sim_card_id (String.t): Identifies a SIM card.</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:include_ota_updates (boolean()): It includes the associated OTA update objects in the response when present.</li></ul></li></ul><h2 id="s_im_card_network_preferences_get/3-returns" class="section-heading">
+  <a href="#s_im_card_network_preferences_get/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="s_im_card_network_preferences_put/3">
+
+    <span id="s_im_card_network_preferences_put/2"></span>
+
+  <div class="detail-header">
+    <a href="#s_im_card_network_preferences_put/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">s_im_card_network_preferences_put(connection, sim_card_id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> s_im_card_network_preferences_put(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.PutSimCardNetworkPreferenceResponse.html#t:t/0">TelnyxAPI.Model.PutSimCardNetworkPreferenceResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Set network preferences
+This API allows setting or updating a SIM card network preference. &lt;br/&gt;&lt;br/&gt; Every SIM card has default network preferences defined on Telnyx. These preferences will determine how a SIMCard will connect to the network by considering a list of preferable operators.&lt;br/&gt;&lt;br/&gt; There can be multiple scenarios where an operator can be preferred over another, for example, when a specific mobile operator can provide better network latency or better pricing. </p><h2 id="s_im_card_network_preferences_put/3-parameters" class="section-heading">
+  <a href="#s_im_card_network_preferences_put/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>sim_card_id (String.t): Identifies a SIM card.</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:body (PutNetworkPreferenceRequest): </li></ul></li></ul><h2 id="s_im_card_network_preferences_put/3-returns" class="section-heading">
+  <a href="#s_im_card_network_preferences_put/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="s_im_card_public_ip_get/3">
+
+    <span id="s_im_card_public_ip_get/2"></span>
+
+  <div class="detail-header">
+    <a href="#s_im_card_public_ip_get/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">s_im_card_public_ip_get(connection, sim_card_id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> s_im_card_public_ip_get(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.SimCardPublicIpResponse.html#t:t/0">TelnyxAPI.Model.SimCardPublicIpResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Get SIM card public IP definition
+It returns the public IP requested for a SIM card. </p><h2 id="s_im_card_public_ip_get/3-parameters" class="section-heading">
+  <a href="#s_im_card_public_ip_get/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>sim_card_id (String.t): Identifies a SIM card.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="s_im_card_public_ip_get/3-returns" class="section-heading">
+  <a href="#s_im_card_public_ip_get/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="set_sim_card_public_ip/3">
+
+    <span id="set_sim_card_public_ip/2"></span>
+
+  <div class="detail-header">
+    <a href="#set_sim_card_public_ip/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">set_sim_card_public_ip(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> set_sim_card_public_ip(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.SimCardActionResponse.html#t:t/0">TelnyxAPI.Model.SimCardActionResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Request setting a SIM card public IP
+This API makes a SIM card reachable on the public internet by mapping a random public IP to the SIM card. &lt;br/&gt;&lt;br/&gt;  The API will trigger an asynchronous operation called a SIM Card Action. The status of the SIM Card Action can be followed through the <a href="https://developers.telnyx.com/docs/api/v2/wireless/SIM-Card-Actions#ListSIMCardActions">List SIM Card Action</a> API. &lt;br/&gt;&lt;br/&gt;  Setting a Public IP to a SIM Card incurs a charge and will only succeed if the account has sufficient funds.</p><h2 id="set_sim_card_public_ip/3-parameters" class="section-heading">
+  <a href="#set_sim_card_public_ip/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="set_sim_card_public_ip/3-returns" class="section-heading">
+  <a href="#set_sim_card_public_ip/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="sim_card_data_usage_notifications_delete/3">
+
+    <span id="sim_card_data_usage_notifications_delete/2"></span>
+
+  <div class="detail-header">
+    <a href="#sim_card_data_usage_notifications_delete/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">sim_card_data_usage_notifications_delete(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> sim_card_data_usage_notifications_delete(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.DeleteSimCardDataUsageNotificationResponse.html#t:t/0">TelnyxAPI.Model.DeleteSimCardDataUsageNotificationResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Delete SIM card data usage notifications
+Delete the SIM Card Data Usage Notification.</p><h2 id="sim_card_data_usage_notifications_delete/3-parameters" class="section-heading">
+  <a href="#sim_card_data_usage_notifications_delete/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="sim_card_data_usage_notifications_delete/3-returns" class="section-heading">
+  <a href="#sim_card_data_usage_notifications_delete/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="sim_card_data_usage_notifications_get/3">
+
+    <span id="sim_card_data_usage_notifications_get/2"></span>
+
+  <div class="detail-header">
+    <a href="#sim_card_data_usage_notifications_get/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">sim_card_data_usage_notifications_get(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> sim_card_data_usage_notifications_get(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.GetSimCardDataUsageNotificationResponse.html#t:t/0">TelnyxAPI.Model.GetSimCardDataUsageNotificationResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Error.html#t:t/0">TelnyxAPI.Model.Error.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Get a single SIM card data usage notification
+Get a single SIM Card Data Usage Notification.</p><h2 id="sim_card_data_usage_notifications_get/3-parameters" class="section-heading">
+  <a href="#sim_card_data_usage_notifications_get/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="sim_card_data_usage_notifications_get/3-returns" class="section-heading">
+  <a href="#sim_card_data_usage_notifications_get/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="sim_card_data_usage_notifications_patch/4">
+
+    <span id="sim_card_data_usage_notifications_patch/3"></span>
+
+  <div class="detail-header">
+    <a href="#sim_card_data_usage_notifications_patch/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">sim_card_data_usage_notifications_patch(connection, id, sim_card_data_usage_notification, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> sim_card_data_usage_notifications_patch(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.SimCardDataUsageNotification.html#t:t/0">TelnyxAPI.Model.SimCardDataUsageNotification.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.UpdateSimCardDataUsageNotificationResponse.html#t:t/0">TelnyxAPI.Model.UpdateSimCardDataUsageNotificationResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Updates information for a SIM Card Data Usage Notification
+Updates information for a SIM Card Data Usage Notification.</p><h2 id="sim_card_data_usage_notifications_patch/4-parameters" class="section-heading">
+  <a href="#sim_card_data_usage_notifications_patch/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>sim_card_data_usage_notification (SimCardDataUsageNotification): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="sim_card_data_usage_notifications_patch/4-returns" class="section-heading">
+  <a href="#sim_card_data_usage_notifications_patch/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="sim_card_data_usage_notifications_post/3">
+
+    <span id="sim_card_data_usage_notifications_post/2"></span>
+
+  <div class="detail-header">
+    <a href="#sim_card_data_usage_notifications_post/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">sim_card_data_usage_notifications_post(connection, create_sim_card_data_usage_notification_request, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> sim_card_data_usage_notifications_post(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="TelnyxAPI.Model.CreateSimCardDataUsageNotificationRequest.html#t:t/0">TelnyxAPI.Model.CreateSimCardDataUsageNotificationRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.CreateSimCardDataUsageNotificationResponse.html#t:t/0">TelnyxAPI.Model.CreateSimCardDataUsageNotificationResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Create a new SIM card data usage notification
+Creates a new SIM card data usage notification.</p><h2 id="sim_card_data_usage_notifications_post/3-parameters" class="section-heading">
+  <a href="#sim_card_data_usage_notifications_post/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>create_sim_card_data_usage_notification_request (CreateSimCardDataUsageNotificationRequest): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="sim_card_data_usage_notifications_post/3-returns" class="section-heading">
+  <a href="#sim_card_data_usage_notifications_post/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="sim_card_delete/3">
+
+    <span id="sim_card_delete/2"></span>
+
+  <div class="detail-header">
+    <a href="#sim_card_delete/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">sim_card_delete(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> sim_card_delete(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.DeleteSimCardResponse.html#t:t/0">TelnyxAPI.Model.DeleteSimCardResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Deletes a SIM card
+The SIM card will be decommissioned, removed from your account and you will stop being charged.&lt;br /&gt;The SIM card won't be able to connect to the network after the deletion is completed, thus making it impossible to consume data.&lt;br/&gt; Transitioning to the disabled state may take a period of time.&lt;/br&gt; Until the transition is completed, the SIM card status will be disabling &lt;code&gt;disabling&lt;/code&gt;.&lt;br /&gt;In order to re-enable the SIM card, you will need to re-register it.</p><h2 id="sim_card_delete/3-parameters" class="section-heading">
+  <a href="#sim_card_delete/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="sim_card_delete/3-returns" class="section-heading">
+  <a href="#sim_card_delete/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="sim_card_disable/3">
+
+    <span id="sim_card_disable/2"></span>
+
+  <div class="detail-header">
+    <a href="#sim_card_disable/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">sim_card_disable(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> sim_card_disable(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.SimCardActionResponse.html#t:t/0">TelnyxAPI.Model.SimCardActionResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Request a SIM card disable
+This API disables a SIM card, disconnecting it from the network and making it impossible to consume data.&lt;br/&gt; The API will trigger an asynchronous operation called a SIM Card Action. Transitioning to the disabled state may take a period of time. The status of the SIM Card Action can be followed through the <a href="https://developers.telnyx.com/docs/api/v2/wireless/SIM-Card-Actions#ListSIMCardActions">List SIM Card Action</a> API. </p><h2 id="sim_card_disable/3-parameters" class="section-heading">
+  <a href="#sim_card_disable/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="sim_card_disable/3-returns" class="section-heading">
+  <a href="#sim_card_disable/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="sim_card_enable/3">
+
+    <span id="sim_card_enable/2"></span>
+
+  <div class="detail-header">
+    <a href="#sim_card_enable/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">sim_card_enable(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> sim_card_enable(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.SimCardActionResponse.html#t:t/0">TelnyxAPI.Model.SimCardActionResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Request a SIM card enable
+This API enables a SIM card, connecting it to the network and making it possible to consume data.&lt;br/&gt; To enable a SIM card, it must be associated with a SIM card group.&lt;br/&gt; The API will trigger an asynchronous operation called a SIM Card Action. Transitioning to the enabled state may take a period of time. The status of the SIM Card Action can be followed through the <a href="https://developers.telnyx.com/docs/api/v2/wireless/SIM-Card-Actions#ListSIMCardActions">List SIM Card Action</a> API. </p><h2 id="sim_card_enable/3-parameters" class="section-heading">
+  <a href="#sim_card_enable/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="sim_card_enable/3-returns" class="section-heading">
+  <a href="#sim_card_enable/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="sim_card_get/3">
+
+    <span id="sim_card_get/2"></span>
+
+  <div class="detail-header">
+    <a href="#sim_card_get/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">sim_card_get(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> sim_card_get(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.GetSimCardResponse.html#t:t/0">TelnyxAPI.Model.GetSimCardResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Get SIM card
+Returns the details regarding a specific SIM card.</p><h2 id="sim_card_get/3-parameters" class="section-heading">
+  <a href="#sim_card_get/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:include_sim_card_group (boolean()): It includes the associated SIM card group object in the response when present.</li></ul></li></ul><h2 id="sim_card_get/3-returns" class="section-heading">
+  <a href="#sim_card_get/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="sim_card_register/3">
+
+    <span id="sim_card_register/2"></span>
+
+  <div class="detail-header">
+    <a href="#sim_card_register/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">sim_card_register(connection, sim_card_registration, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> sim_card_register(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="TelnyxAPI.Model.SimCardRegistration.html#t:t/0">TelnyxAPI.Model.SimCardRegistration.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.RegisterSimCardsResponse.html#t:t/0">TelnyxAPI.Model.RegisterSimCardsResponse.t</a>()} | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Register SIM cards
+Register the SIM cards associated with the provided registration codes to the current user's account.&lt;br/&gt;&lt;br/&gt; If &lt;code&gt;sim_card_group_id&lt;/code&gt; is provided, the SIM cards will be associated with that group. Otherwise, the default group for the current user will be used.&lt;br/&gt;&lt;br/&gt; </p><h2 id="sim_card_register/3-parameters" class="section-heading">
+  <a href="#sim_card_register/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>sim_card_registration (SimCardRegistration): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="sim_card_register/3-returns" class="section-heading">
+  <a href="#sim_card_register/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="sim_card_set_standby/3">
+
+    <span id="sim_card_set_standby/2"></span>
+
+  <div class="detail-header">
+    <a href="#sim_card_set_standby/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">sim_card_set_standby(connection, id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> sim_card_set_standby(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.SimCardActionResponse.html#t:t/0">TelnyxAPI.Model.SimCardActionResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Request setting a SIM card to standby
+The SIM card will be able to connect to the network once the process to set it to standby has been completed, thus making it possible to consume data.&lt;br/&gt; To set a SIM card to standby, it must be associated with SIM card group.&lt;br/&gt; The API will trigger an asynchronous operation called a SIM Card Action. Transitioning to the standby state may take a period of time. The status of the SIM Card Action can be followed through the <a href="https://developers.telnyx.com/docs/api/v2/wireless/SIM-Card-Actions#ListSIMCardActions">List SIM Card Action</a> API. </p><h2 id="sim_card_set_standby/3-parameters" class="section-heading">
+  <a href="#sim_card_set_standby/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="sim_card_set_standby/3-returns" class="section-heading">
+  <a href="#sim_card_set_standby/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="sim_card_update/4">
+
+    <span id="sim_card_update/3"></span>
+
+  <div class="detail-header">
+    <a href="#sim_card_update/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">sim_card_update(connection, id, sim_card, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> sim_card_update(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  <a href="TelnyxAPI.Model.SimCard.html#t:t/0">TelnyxAPI.Model.SimCard.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.UpdateSimCardResponse.html#t:t/0">TelnyxAPI.Model.UpdateSimCardResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Update a SIM card
+Updates SIM card data</p><h2 id="sim_card_update/4-parameters" class="section-heading">
+  <a href="#sim_card_update/4-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>sim_card (SimCard): </li><li>opts (KeywordList): [optional] Optional parameters</li></ul><h2 id="sim_card_update/4-returns" class="section-heading">
+  <a href="#sim_card_update/4-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="sim_cards_get/2">
+
+    <span id="sim_cards_get/1"></span>
+
+  <div class="detail-header">
+    <a href="#sim_cards_get/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">sim_cards_get(connection, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> sim_cards_get(
+  <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.SearchSimCardsResponse.html#t:t/0">TelnyxAPI.Model.SearchSimCardsResponse.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>Get all SIM cards
+Get all SIM cards belonging to the user that match the given filters.</p><h2 id="sim_cards_get/2-parameters" class="section-heading">
+  <a href="#sim_cards_get/2-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:page_left_square_bracketnumber_right_square_bracket (integer()): The page number to load</li><li>:page_left_square_bracketsize_right_square_bracket (integer()): The size of the page</li><li>:include_sim_card_group (boolean()): It includes the associated SIM card group object in the response when present.</li><li>:filter_left_square_bracketsim_card_group_id_right_square_bracket (String.t): A valid SIM card group ID.</li><li>:filter_left_square_brackettags_right_square_bracket ([String.t]): A list of SIM card tags to filter on.&lt;br/&gt;&lt;br/&gt; If the SIM card contains &lt;b&gt;&lt;i&gt;all&lt;/i&gt;&lt;/b&gt; of the given &lt;code&gt;tags&lt;/code&gt; they will be found.&lt;br/&gt;&lt;br/&gt; For example, if the SIM cards have the following tags: &lt;ul&gt;   &lt;li&gt;&lt;code&gt;['customers', 'staff', 'test']&lt;/code&gt;   &lt;li&gt;&lt;code&gt;['test']&lt;/code&gt;&lt;/li&gt;   &lt;li&gt;&lt;code&gt;['customers']&lt;/code&gt;&lt;/li&gt; &lt;/ul&gt; Searching for &lt;code&gt;['customers', 'test']&lt;/code&gt; returns only the first because it's the only one with both tags.&lt;br/&gt; Searching for &lt;code&gt;test&lt;/code&gt; returns the first two SIMs, because both of them have such tag.&lt;br/&gt; Searching for &lt;code&gt;customers&lt;/code&gt; returns the first and last SIMs.&lt;br/&gt; </li><li>:filter_left_square_bracketiccid_right_square_bracket (String.t): A search string to partially match for the SIM card's ICCID.</li></ul></li></ul><h2 id="sim_cards_get/2-returns" class="section-heading">
+  <a href="#sim_cards_get/2-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="wireless_connectivity_logs_get/3">
+
+    <span id="wireless_connectivity_logs_get/2"></span>
+
+  <div class="detail-header">
+    <a href="#wireless_connectivity_logs_get/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">wireless_connectivity_logs_get(connection, sim_card_id, opts \\ [])</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> wireless_connectivity_logs_get(<a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:client/0">Tesla.Env.client</a>(), <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.WirelessConnectivityLogCollectionResponse.html#t:t/0">TelnyxAPI.Model.WirelessConnectivityLogCollectionResponse.t</a>()}
+  | {:error, <a href="https://hexdocs.pm/tesla/1.4.4/Tesla.Env.html#t:t/0">Tesla.Env.t</a>()}</pre>
+
+      </div>
+
+<p>List wireless connectivity logs
+This API allows listing a paginated collection of Wireless Connectivity Logs associated with a SIM Card, for troubleshooting purposes.</p><h2 id="wireless_connectivity_logs_get/3-parameters" class="section-heading">
+  <a href="#wireless_connectivity_logs_get/3-parameters" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">parameters</p>
+  </a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>sim_card_id (String.t): Identifies a SIM card.</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:page_left_square_bracketnumber_right_square_bracket (integer()): The page number to load</li><li>:page_left_square_bracketsize_right_square_bracket (integer()): The size of the page</li></ul></li></ul><h2 id="wireless_connectivity_logs_get/3-returns" class="section-heading">
+  <a href="#wireless_connectivity_logs_get/3-returns" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">returns</p>
+  </a>
+  Returns
+</h2>
+<p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+
+          <p>
+            On Hex.pm:
+
+            <span class="line">
+              <a href="https://hex.pm/packages/telnyx_api/2.0.0" class="line footer-hex-package">Package</a>
+              <a href="https://preview.hex.pm/preview/telnyx_api/2.0.0" class="line">Preview</a>
+
+                <a href="https://preview.hex.pm/preview/telnyx_api/2.0.0/show/lib/telnyx_api/api/sim_cards.ex">(current file)</a>
+
+            </span>
+
+            <button class="line footer-button display-quick-switch">
+              Search
+            </button>
+          </p>
+
+        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.3) for the
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>
